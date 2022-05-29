@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+
+:root {
+    --dark-grey: #282c34;
+    --pink: #fcd1d1;
+    --lighter-pink: #ece2e1;
+    --blue: #aee1e1;
+    --lighter-blue: #d3e0dc;
+}
+
+.Home {
+    text-align: center;
+    font-family: "ts_blockbold";
+    background-color: var(--dark-grey);
+    min-height: 100vh;
+    color: var(--lighter-pink);
+}
+
+.Home-header {
+    background-color: var(--dark-grey);
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(20px + 2vmin);
+    color: var(--lighter-pink);
+}
+
+.Page-link {
+    color: var(--blue);
+    text-decoration: none;
+    font-size: calc(20px + 2vmin);
+}
+
+.Page-link:hover {
+    color: var(--pink);
+}
+
+p {
+    font-size: calc(15px + 2vmin);
+}

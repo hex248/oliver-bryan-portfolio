@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "./App.css";
 import "./Work.css";
@@ -23,32 +23,18 @@ function Work() {
 
             <div className="portfolio-grid">
                 <a className="grid-item" href="/work/people">
-                    <img className="grid-image" src={`photos/previews/people/${peopleIndex}.jpg`} />
-                    <img className="portfolio-overlay" src={`photos/previews/people/overlay.png`} />
+                    <img className="grid-image" src={`photos/previews/desktop/people/${peopleIndex}.jpg`} alt="" />
+                    <img className="portfolio-overlay" src={`photos/previews/desktop/people/overlay.png`} alt="" />
                 </a>
                 <a className="grid-item" href="/work/environment">
-                    <img className="grid-image" src={`photos/previews/environment/${envIndex}.jpg`} />
-                    <img className="portfolio-overlay" src={`photos/previews/environment/overlay.png`} />
+                    <img className="grid-image" src={`photos/previews/desktop/environment/${envIndex}.jpg`} alt="" />
+                    <img className="portfolio-overlay" src={`photos/previews/desktop/environment/overlay.png`} alt="" />
                 </a>
                 <a className="grid-item" href="/work/nature">
-                    <img className="grid-image" src={`photos/previews/nature/${natureIndex}.jpg`} />
-                    <img className="portfolio-overlay" src={`photos/previews/nature/overlay.png`} />
+                    <img className="grid-image" src={`photos/previews/desktop/nature/${natureIndex}.jpg`} alt="" />
+                    <img className="portfolio-overlay" src={`photos/previews/desktop/nature/overlay.png`} alt="" />
                 </a>
             </div>
-
-            {/* <div id="PhotoGridContainer">
-                <div className="PhotoGrid">
-                    {photos
-                        ? photos.map((p) => {
-                              return (
-                                  <a href={`full-view?p=full-size/${p}`}>
-                                      <img src={`photos/web-size/${p}`} alt={p} className="photoPreview" />
-                                  </a>
-                              );
-                          })
-                        : ""}
-                </div>
-            </div> */}
 
             <SocialIcons />
         </div>
