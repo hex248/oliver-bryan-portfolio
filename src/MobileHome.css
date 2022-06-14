@@ -27,13 +27,3 @@
     font-size: calc(20px + 2vmin);
     color: var(--lighter-pink);
 }
-
-.Page-link {
-    color: var(--blue);
-    text-decoration: none;
-    font-size: calc(20px + 2vmin);
-}
-
-.Page-link:hover {
-    color: var(--pink);
-}
