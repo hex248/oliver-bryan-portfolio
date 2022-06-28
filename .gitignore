@@ -26,3 +26,5 @@ yarn-error.log*
 public/photos/people/full-size
 public/photos/environment/full-size
 public/photos/nature/full-size
+
+log
