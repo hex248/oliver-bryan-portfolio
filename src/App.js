@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { isBrowser, isMobile, useMobileOrientation } from "react-device-detect";
 
 import "./App.css";
 import "./font.css";
+// import "./Colours.css";
 import Home from "./Home";
 import Work from "./Work";
 import Gallery from "./Gallery";
@@ -13,7 +14,31 @@ import MobileWork from "./MobileWork";
 import MobileGallery from "./MobileGallery";
 import MobileAbout from "./MobileAbout";
 
+import colourSchemes from "./colourSchemes.json";
+
 export default function App() {
+    /*
+        colour scheme
+    */
+
+    let colourScheme = JSON.parse(localStorage.getItem("colourScheme"));
+
+    // check if new colour scheme is needed
+    let lastColourSchemeSetTime = localStorage.getItem("lastColourSchemeSetTime");
+
+    // refresh every 10 minutes
+    if (!lastColourSchemeSetTime || Date.now() - lastColourSchemeSetTime > 10 * 60 * 1000) {
+        // if 10 minutes have passed set a new random colour scheme
+        colourScheme = colourSchemes[Math.floor(Math.random() * colourSchemes.length)];
+        localStorage.setItem("colourScheme", JSON.stringify(colourScheme));
+        localStorage.setItem("lastColourSchemeSetTime", Date.now());
+    }
+
+    // update css
+    for (let property of Object.keys(colourScheme)) {
+        document.documentElement.style.setProperty(property, colourScheme[property]);
+    }
+
     let orientation = useMobileOrientation();
     if (isMobile && orientation.isPortrait) {
         return (

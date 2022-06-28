@@ -1,8 +1,8 @@
 * {
-    background-color: "#282C34";
-    color: "#FCD1D1";
+    /* background-color: var(--dark-colour); */
+    color: var(--secondary-accent);
     scrollbar-width: auto;
-    scrollbar-color: #aee1e1 #282c34;
+    scrollbar-color: var(--primary-accent) var(--dark-colour);
 }
 
 /* Chrome, Edge, and Safari */
@@ -11,24 +11,24 @@
 }
 
 *::-webkit-scrollbar-track {
-    background: #282c34;
+    background: var(--dark-colour);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #aee1e1;
+    background-color: var(--primary-accent);
     border-radius: 10px;
-    border: 0px double #ffffff;
+    border: 0px double var(--lighter-secondary-accent);
 }
 
 a {
     text-decoration: none;
-    color: var(--lighter-pink);
+    color: var(--lighter-secondary-accent);
 }
 
 #page-name {
     margin-top: 0px;
     margin-bottom: 0px;
-    color: var(--blue);
+    color: var(--primary-accent);
     font-size: calc(30px + 2vmin);
 }
 
