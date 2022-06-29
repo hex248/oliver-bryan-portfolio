@@ -3,6 +3,7 @@ const fse = require("fs-extra");
 const { compress } = require("compress-images/promise");
 const simpleGit = require("simple-git");
 const { v4 } = require("uuid");
+const sharp = require("sharp");
 
 const go = async () => {
     let directories = fs.readdirSync("./uploadqueue");
@@ -29,16 +30,14 @@ const go = async () => {
     for (let dir of directories) {
         if (fs.readdirSync(`./uploadqueue/${dir}`).length > 0) {
             // copy to full-size directory
-            fse.copySync(`./uploadqueue/${dir}`, `./public/photos/${dir}/full-size`, (err) => (err ? console.error : null));
+            await fse.copySync(`./uploadqueue/${dir}`, `./public/photos/${dir}/full-size`, (err) => (err ? console.error : null));
             console.log(dir);
-            const result = await compress({
-                source: `./uploadqueue/${dir}/*.jpg`,
-                destination: `./public/photos/${dir}/web-size/`,
-                enginesSetup: {
-                    jpg: { engine: "mozjpeg", command: ["-quality", "50"] },
-                },
-            });
-            console.log(result);
+
+            for (let file of fs.readdirSync(`./public/photos/${dir}/full-size`)) {
+                let image = await sharp(`./public/photos/${dir}/full-size/${file}`);
+                let resized = await image.resize({ width: 1500 });
+                await resized.toFile(`./public/photos/${dir}/web-size/${file}`);
+            }
         }
     }
 
