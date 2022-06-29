@@ -37,15 +37,17 @@ function Gallery() {
                 <a href="/">oliver bryan</a>
             </header>
 
-            <a href="/work" className="Page-link noselect">
-                {"back"}
-            </a>
-            <br className="noselect" />
-            <br className="noselect" />
-
             <h1 id="page-name" className="noselect">
                 {category ? category : "Gallery"}
             </h1>
+
+            <br className="noselect" />
+            <br className="noselect" />
+
+            <a href="/work" className="Page-link noselect">
+                {"back"}
+            </a>
+
             <Nav category={category} />
             <div className="gridRow noselect">
                 <div className="gridColumn">
