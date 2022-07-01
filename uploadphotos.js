@@ -16,16 +16,6 @@ const go = async () => {
         }
     }
 
-    const progress = (error, statistic, completed) => {
-        if (error) {
-            console.log("Error happen while processing file");
-            console.log(error);
-            return;
-        }
-        console.log("Sucefully processed file");
-        console.log(statistic);
-    };
-
     // apply compression and save to web-size
     for (let dir of directories) {
         if (fs.readdirSync(`./uploadqueue/${dir}`).length > 0) {
