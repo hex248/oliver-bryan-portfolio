@@ -7,7 +7,7 @@
 .BackButton {
     background-color: transparent;
     cursor: pointer;
-    color: var(--lightest-secondary-accent);
+    color: var(--lighter-secondary-accent);
     font-size: 3vw;
     font-family: "ts_blockbold";
     text-decoration: none;
