@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { isBrowser, isMobile, useMobileOrientation } from "react-device-detect";
 
@@ -8,20 +8,28 @@ import "./font.css";
 import Home from "./Home";
 import Work from "./Work";
 import Gallery from "./Gallery";
+import FullView from "./FullView";
 import About from "./About";
 import MobileHome from "./MobileHome";
 import MobileWork from "./MobileWork";
 import MobileGallery from "./MobileGallery";
+import MobileFullView from "./MobileFullView";
 import MobileAbout from "./MobileAbout";
 
 import colourSchemes from "./colourSchemes.json";
 
 export default function App() {
+    // update css
+    let colourScheme = colourSchemes[0];
+
+    for (let property of Object.keys(colourScheme)) {
+        document.documentElement.style.setProperty(property, colourScheme[property]);
+    }
     /*
         colour scheme
     */
 
-    let colourScheme = JSON.parse(localStorage.getItem("colourScheme"));
+    colourScheme = JSON.parse(localStorage.getItem("colourScheme"));
 
     // check if new colour scheme is needed
     let lastColourSchemeSetTime = localStorage.getItem("lastColourSchemeSetTime");
@@ -47,8 +55,9 @@ export default function App() {
                     <Route index element={<MobileHome />} />
                     <Route path="work" element={<MobileWork />} />
                     <Route path="work/people" element={<MobileGallery category="people" />} />
+                    <Route path="work/people/full" element={<MobileFullView category="people" />} />
                     <Route path="work/environment" element={<MobileGallery category="environment" />} />
-                    <Route path="work/nature" element={<MobileGallery category="nature" />} />
+                    <Route path="work/environment/full" element={<MobileFullView category="environment" />} />
                     <Route path="about" element={<MobileAbout />} />
                     <Route path="*" element={<App />} />
                 </Routes>
@@ -61,8 +70,9 @@ export default function App() {
                     <Route index element={<Home />} />
                     <Route path="work" element={<Work />} />
                     <Route path="work/people" element={<Gallery category="people" />} />
+                    <Route path="work/people/full" element={<FullView category={"people"} />} />
                     <Route path="work/environment" element={<Gallery category="environment" />} />
-                    <Route path="work/nature" element={<Gallery category="nature" />} />
+                    <Route path="work/environment/full" element={<FullView category={"environment"} />} />
                     <Route path="about" element={<About />} />
                     <Route path="*" element={<App />} />
                 </Routes>
