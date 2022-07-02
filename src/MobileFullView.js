@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import "./App.css";
-import "./FullView.css";
+import "./MobileFullView.css";
 
 import SocialIcons from "./SocialIcons.js";
 
@@ -20,7 +20,7 @@ function FullView({ category }) {
                 <a href="/">oliver bryan</a>
             </header>
 
-            <img className="FullImage" src={`/photos/${category}/web-size/${fileName}`} alt="" />
+            <img className="MobileFullImage" src={`/photos/${category}/web-size/${fileName}`} alt={""} />
             <SocialIcons />
         </div>
     );

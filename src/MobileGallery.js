@@ -49,9 +49,23 @@ function Gallery() {
             <Nav category={category} />
             <div className="gridRow noselect">
                 <div className="gridColumn">
-                    {photos ? photos.slice(Math.floor(photos.length / 2), photos.length).map((p) => <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />) : ""}
+                    {photos
+                        ? photos.slice(Math.floor(photos.length / 2), photos.length).map((p) => (
+                              <a href={`/work/${category}/full?p=${p}`} target="_blank" rel="noreferrer" key={p}>
+                                  <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />
+                              </a>
+                          ))
+                        : ""}
                 </div>
-                <div className="gridColumn">{photos ? photos.slice(0, Math.floor(photos.length / 2)).map((p) => <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />) : ""}</div>
+                <div className="gridColumn">
+                    {photos
+                        ? photos.slice(0, Math.floor(photos.length / 2)).map((p) => (
+                              <a href={`/work/${category}/full?p=${p}`} target="_blank" rel="noreferrer" key={p}>
+                                  <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />
+                              </a>
+                          ))
+                        : ""}
+                </div>
             </div>
             <Nav category={category} />
             <SocialIcons />
@@ -88,10 +102,6 @@ function Nav({ category }) {
             break;
         case "environment":
             left = "people";
-            right = "nature";
-            break;
-        case "nature":
-            left = "environment";
             right = "";
             break;
         default:
@@ -101,9 +111,9 @@ function Nav({ category }) {
     }
 
     return (
-        <div id="gallery-nav">
-            {left !== "" ? <a href={`/work/${left}`} id="left-nav">{`< ${left}`}</a> : null}
-            {right !== "" ? <a href={`/work/${right}`} id="right-nav">{`${right} >`}</a> : null}
+        <div id="mobile-gallery-nav">
+            {left !== "" ? <a href={`/work/${left}`} id="mobile-left-nav">{`< ${left}`}</a> : null}
+            {right !== "" ? <a href={`/work/${right}`} id="mobile-right-nav">{`${right} >`}</a> : null}
         </div>
     );
 }

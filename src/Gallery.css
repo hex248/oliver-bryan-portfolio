@@ -43,7 +43,7 @@
 
 #gallery-nav {
     font-size: 3vw;
-    padding: 3vw;
+    padding-bottom: 6vh;
 }
 
 #left-nav {
@@ -51,6 +51,7 @@
     left: 3vw;
     text-align: left;
 }
+
 #right-nav {
     position: absolute;
     right: 3vw;

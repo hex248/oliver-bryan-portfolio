@@ -41,17 +41,17 @@
     color: var(--lighter-secondary-accent);
 }
 
-#gallery-nav {
+#mobile-gallery-nav {
     font-size: 3vw;
     padding: 3vw;
 }
 
-#left-nav {
+#mobile-left-nav {
     position: absolute;
     left: 3vw;
     text-align: left;
 }
-#right-nav {
+#mobile-right-nav {
     position: absolute;
     right: 3vw;
     text-align: right;
