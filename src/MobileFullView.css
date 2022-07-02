@@ -3,3 +3,14 @@
     max-height: 75.7vh;
     border: 2px solid var(--lighter-secondary-accent);
 }
+
+.MobileBackButton {
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--lightest-secondary-accent);
+    font-size: 15vw;
+    font-family: "ts_blockbold";
+    text-decoration: none;
+    padding: 0px 0px;
+    border: 0px;
+}

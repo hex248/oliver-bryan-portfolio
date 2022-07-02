@@ -17,7 +17,11 @@ function FullView({ category }) {
     return (
         <div className="Home">
             <header className="Home-header noselect">
-                <a href="/">oliver bryan</a>
+                {/* <a href="/">oliver bryan</a> */}
+
+                <button className="MobileBackButton" onClick={() => window.close()}>
+                    back
+                </button>
             </header>
 
             <img className="MobileFullImage" src={`/photos/${category}/web-size/${fileName}`} alt={""} />
