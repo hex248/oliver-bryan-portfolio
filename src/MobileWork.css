@@ -37,8 +37,8 @@
 .portfolio-grid-mobile {
     display: grid;
     height: 75vh;
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    grid-row-gap: 3vh;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-row-gap: 2vh;
     padding-left: 10vw;
     padding-right: 10vw;
     box-sizing: border-box;

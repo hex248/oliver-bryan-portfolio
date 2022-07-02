@@ -30,10 +30,6 @@ function Work() {
                     <img className="grid-image-mobile" src={`photos/previews/mobile/environment/${envIndex}.jpg`} alt="" />
                     <img className="portfolio-overlay-mobile" src={`photos/previews/mobile/environment/overlay.png`} alt="" />
                 </a>
-                <a className="grid-item-mobile" href="/work/nature">
-                    <img className="grid-image-mobile" src={`photos/previews/mobile/nature/${natureIndex}.jpg`} alt="" />
-                    <img className="portfolio-overlay-mobile" src={`photos/previews/mobile/nature/overlay.png`} alt="" />
-                </a>
             </div>
             <MobileSocialIcons />
         </div>

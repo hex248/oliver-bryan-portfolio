@@ -8,7 +8,6 @@ import SocialIcons from "./SocialIcons.js";
 function Work() {
     let peopleIndex = Math.ceil(Math.random() * 5);
     let envIndex = Math.ceil(Math.random() * 5);
-    let natureIndex = Math.ceil(Math.random() * 5);
 
     return (
         <div className="Home">
@@ -29,10 +28,6 @@ function Work() {
                 <a className="grid-item" href="/work/environment">
                     <img className="grid-image" src={`photos/previews/desktop/environment/${envIndex}.jpg`} alt="" />
                     <img className="portfolio-overlay" src={`photos/previews/desktop/environment/overlay.png`} alt="" />
-                </a>
-                <a className="grid-item" href="/work/nature">
-                    <img className="grid-image" src={`photos/previews/desktop/nature/${natureIndex}.jpg`} alt="" />
-                    <img className="portfolio-overlay" src={`photos/previews/desktop/nature/overlay.png`} alt="" />
                 </a>
             </div>
 
