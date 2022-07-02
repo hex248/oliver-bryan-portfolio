@@ -1,5 +1,16 @@
 .FullImage {
     max-width: 92.5vw;
-    max-height: 81.7vh;
+    max-height: 82vh;
     border: 2px solid var(--lighter-secondary-accent);
+}
+
+.BackButton {
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--lightest-secondary-accent);
+    font-size: 3vw;
+    font-family: "ts_blockbold";
+    text-decoration: none;
+    padding: 0px 0px;
+    border: 0px;
 }
