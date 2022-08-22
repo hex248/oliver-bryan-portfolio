@@ -1,10 +1,10 @@
 [
     {
-        "video": "1.mp4",
-        "thumbnail": "thumbnails/1.png"
+        "video": "/videos/1.mp4",
+        "thumbnail": "/videos/thumbnails/1.png"
     },
     {
-        "video": "2.mp4",
-        "thumbnail": "thumbnails/2.png"
+        "video": "/videos/2.mp4",
+        "thumbnail": "/videos/thumbnails/2.png"
     }
 ]

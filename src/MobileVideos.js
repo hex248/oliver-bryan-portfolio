@@ -37,7 +37,7 @@ function Videos() {
 function Player({ video }) {
     return (
         <video className="videoPlayer" key={video.video} poster={video.thumbnail} controls loop>
-            <source src={`/videos/${video.video}`} type="video/mp4" />
+            <source src={video.video} type="video/mp4" />
         </video>
     );
 }
