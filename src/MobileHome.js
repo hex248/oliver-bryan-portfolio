@@ -10,7 +10,9 @@ function Home() {
                 <a href="/work" className="Page-link noselect">
                     Work
                 </a>
-                <br className="noselect" />
+                <a href="/videos" className="Page-link noselect">
+                    Videos
+                </a>
                 <a href="/about" className="Page-link noselect">
                     About
                 </a>
