@@ -23,8 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # large files
-public/photos/people/full-size
-public/photos/environment/full-size
-public/photos/nature/full-size
+# public/photos/people/full-size
+# public/photos/environment/full-size
+# public/photos/nature/full-size
 
 log
