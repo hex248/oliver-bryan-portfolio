@@ -1,6 +1,6 @@
 .FullImage {
     max-width: 92.5vw;
-    max-height: 82vh;
+    max-height: 775px;
     border: 2px solid var(--lighter-secondary-accent);
 }
 

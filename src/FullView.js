@@ -24,7 +24,7 @@ function FullView({ category }) {
                 </button>
             </header>
 
-            <img className="FullImage" src={`/photos/${category}/web-size/${fileName}`} alt="" />
+            <img className="FullImage" src={`/photos/${category}/full-size/${fileName}`} alt="" />
             <SocialIcons />
         </div>
     );
