@@ -1,86 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { isBrowser, isMobile, useMobileOrientation } from "react-device-detect";
 
 import "./App.css";
+import "./Gallery.css";
 import "./font.css";
-// import "./Colours.css";
-import Home from "./Home";
-import Work from "./Work";
-import Videos from "./Videos";
-import Gallery from "./Gallery";
-import FullView from "./FullView";
-import About from "./About";
-import MobileHome from "./MobileHome";
-import MobileWork from "./MobileWork";
-import MobileVideos from "./MobileVideos";
-import MobileGallery from "./MobileGallery";
-import MobileFullView from "./MobileFullView";
-import MobileAbout from "./MobileAbout";
 
-import colourSchemes from "./colourSchemes.json";
+import Home from "./Home";
+import Gallery from "./Gallery";
+import Contact from "./Contact";
+import About from "./About";
+
+import LightDark from "./LightDark";
+import Header from "./Header";
 
 export default function App() {
-    // update css
-    let colourScheme = colourSchemes[0];
+    const [ldIcon, setLDIcon] = useState("");
 
-    for (let property of Object.keys(colourScheme)) {
-        document.documentElement.style.setProperty(property, colourScheme[property]);
-    }
-    /*
-        colour scheme
-    */
+    useEffect(() => {
+        if (localStorage.getItem("colourMode") == "dark") {
+            SetDarkMode();
+        } else if (localStorage.getItem("colourMode") == "light") {
+            SetLightMode();
+        }
+    }, []);
 
-    colourScheme = JSON.parse(localStorage.getItem("colourScheme"));
+    const ToggleDarkMode = () => {
+        if (localStorage.getItem("colourMode") == "dark") {
+            SetLightMode();
+        } else {
+            SetDarkMode();
+        }
+    };
 
-    // check if new colour scheme is needed
-    let lastColourSchemeSetTime = localStorage.getItem("lastColourSchemeSetTime");
+    const SetLightMode = () => {
+        localStorage.setItem("colourMode", "light");
+        document.documentElement.style.setProperty("--background", "#eeeeee");
+        document.documentElement.style.setProperty("--second-background", "#ffffff");
+        document.documentElement.style.setProperty("--foreground", "#040404");
+        document.documentElement.style.setProperty("--second-foreground", "#000000");
+        setLDIcon("moon");
+    };
 
-    // refresh every 10 minutes
-    if (!lastColourSchemeSetTime || Date.now() - lastColourSchemeSetTime > 10 * 60 * 1000) {
-        // if 10 minutes have passed set a new random colour scheme
-        colourScheme = colourSchemes[Math.floor(Math.random() * colourSchemes.length)];
-        localStorage.setItem("colourScheme", JSON.stringify(colourScheme));
-        localStorage.setItem("lastColourSchemeSetTime", Date.now());
-    }
+    const SetDarkMode = () => {
+        localStorage.setItem("colourMode", "dark");
+        document.documentElement.style.setProperty("--background", "#040404");
+        document.documentElement.style.setProperty("--second-background", "#000000");
+        document.documentElement.style.setProperty("--foreground", "#eeeeee");
+        document.documentElement.style.setProperty("--second-foreground", "#ffffff");
+        setLDIcon("sun");
+    };
 
-    // update css
-    for (let property of Object.keys(colourScheme)) {
-        document.documentElement.style.setProperty(property, colourScheme[property]);
-    }
-
-    let orientation = useMobileOrientation();
-    if (isMobile && orientation.isPortrait) {
-        return (
+    return (
+        <>
             <BrowserRouter>
-                <Routes>
-                    <Route index element={<MobileHome />} />
-                    <Route path="work" element={<MobileWork />} />
-                    <Route path="videos" element={<MobileVideos />} />
-                    <Route path="work/people" element={<MobileGallery category="people" />} />
-                    <Route path="work/people/full" element={<MobileFullView category="people" />} />
-                    <Route path="work/environment" element={<MobileGallery category="environment" />} />
-                    <Route path="work/environment/full" element={<MobileFullView category="environment" />} />
-                    <Route path="about" element={<MobileAbout />} />
-                    <Route path="*" element={<App />} />
-                </Routes>
-            </BrowserRouter>
-        );
-    } else if ((isMobile && orientation.isLandscape) || isBrowser) {
-        return (
-            <BrowserRouter>
+                <LightDark onClick={ToggleDarkMode} icon={ldIcon} />
+                <Header />
                 <Routes>
                     <Route index element={<Home />} />
-                    <Route path="work" element={<Work />} />
-                    <Route path="videos" element={<Videos />} />
-                    <Route path="work/people" element={<Gallery category="people" />} />
-                    <Route path="work/people/full" element={<FullView category={"people"} />} />
-                    <Route path="work/environment" element={<Gallery category="environment" />} />
-                    <Route path="work/environment/full" element={<FullView category={"environment"} />} />
+                    <Route path="portraits" element={<Gallery category={"people"} />} />
+                    <Route path="street" element={<Gallery category={"environment"} />} />
+                    <Route path="contact" element={<Contact />} />
                     <Route path="about" element={<About />} />
                     <Route path="*" element={<App />} />
                 </Routes>
             </BrowserRouter>
-        );
-    }
+        </>
+    );
 }

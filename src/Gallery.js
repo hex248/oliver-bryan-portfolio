@@ -1,88 +1,62 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
-
-import "./App.css";
-import "./Gallery.css";
-
-import SocialIcons from "./SocialIcons.js";
+import React, { useState, useEffect } from "react";
 
 import people from "./photos/people.json";
 import environment from "./photos/environment.json";
-import nature from "./photos/nature.json";
 
-function Gallery() {
-    const location = useLocation();
-    let category = location.pathname.split("/work/")[1];
+const Gallery = ({ category }) => {
     const [photos, setPhotos] = useState([]);
-    if (photos.length < 1) {
-        switch (category) {
-            case "people":
-                setPhotos(shuffle(people));
-                break;
-            case "environment":
-                setPhotos(shuffle(environment));
-                break;
-            case "nature":
-                setPhotos(shuffle(nature));
-                break;
-            default:
-                setPhotos([]);
-                break;
+    useEffect(() => {
+        if (photos.length < 1) {
+            console.log(category);
+            console.log(people);
+            switch (category) {
+                case "people":
+                    setPhotos(shuffle(people));
+                    break;
+                case "environment":
+                    setPhotos(shuffle(environment));
+                    break;
+                default:
+                    setPhotos([]);
+                    break;
+            }
         }
-    }
+    }, []);
+
+    // const columnCount = 3;
+    const columns = [0, 1, 2];
+
+    const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+
+    const Grid = () => {
+        return (
+            <div className="gridRow">
+                {columns.length > 0
+                    ? columns.map((i) => (
+                          <div className="gridColumn" key={i}>
+                              {photos
+                                  ? photos.slice(clamp(i - 1, 0, columns.length), clamp(i - 1, 0, columns.length) * Math.floor(photos.length / columns.length)).map((p) => {
+                                        console.log(p);
+                                        return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                    })
+                                  : ""}
+                          </div>
+                      ))
+                    : ""}
+            </div>
+        );
+    };
 
     return (
-        <div className="Home">
-            <header className="Home-header noselect">
-                <a href="/">oliver bryan</a>
-            </header>
-
-            <h1 id="page-name" className="noselect">
-                {category ? category : "Gallery"}
-            </h1>
-
-            <br className="noselect" />
-            <br className="noselect" />
-
-            <a href="/work" className="Page-link noselect">
-                {"back"}
-            </a>
-
-            <Nav category={category} />
-            <div className="gridRow noselect">
-                <div className="gridColumn">
-                    {photos
-                        ? photos.slice(2 * Math.floor(photos.length / 3), photos.length).map((p) => (
-                              <a href={`/work/${category}/full?p=${p}`} target="_blank" rel="noreferrer" key={p}>
-                                  <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />
-                              </a>
-                          ))
-                        : ""}
-                </div>
-                <div className="gridColumn">
-                    {photos
-                        ? photos.slice(Math.floor(photos.length / 3), 2 * Math.floor(photos.length / 3)).map((p) => (
-                              <a href={`/work/${category}/full?p=${p}`} target="_blank" rel="noreferrer" key={p}>
-                                  <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />
-                              </a>
-                          ))
-                        : ""}
-                </div>
-                <div className="gridColumn">
-                    {photos
-                        ? photos.slice(0, Math.floor(photos.length / 3)).map((p) => (
-                              <a href={`/work/${category}/full?p=${p}`} target="_blank" rel="noreferrer" key={p}>
-                                  <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />
-                              </a>
-                          ))
-                        : ""}
-                </div>
+        <>
+            <div className="main">
+                <h1 id="galleryCategoryTitle">{category.toUpperCase()}</h1>
+                <Grid />
+                {/* <img src={`/photos/${category}/web-size/${photos[0]}`}></img> */}
             </div>
-            <Nav category={category} />
-            <SocialIcons />
-        </div>
+        </>
     );
-}
+};
 
 export default Gallery;
 
@@ -101,30 +75,4 @@ function shuffle(array) {
     }
 
     return array;
-}
-
-function Nav({ category }) {
-    let left = "";
-    let right = "";
-    switch (category) {
-        case "people":
-            left = "";
-            right = "environment";
-            break;
-        case "environment":
-            left = "people";
-            right = "";
-            break;
-        default:
-            left = "";
-            right = "";
-            break;
-    }
-
-    return (
-        <div id="gallery-nav">
-            {left !== "" ? <a href={`/work/${left}`} id="left-nav">{`< ${left}`}</a> : null}
-            {right !== "" ? <a href={`/work/${right}`} id="right-nav">{`${right} >`}</a> : null}
-        </div>
-    );
 }

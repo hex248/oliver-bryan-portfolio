@@ -1,47 +1,132 @@
-* {
-    /* background-color: var(--dark-colour); */
-    color: var(--secondary-accent);
-    scrollbar-width: auto;
-    scrollbar-color: var(--primary-accent) var(--dark-colour);
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+    --background: #eeeeee;
+    --second-background: #ffffff;
+    --foreground: #040404;
+    --second-foreground: #000000;
+    /* --primary-font: "ts_block_bold"; */
+    --primary-font: "EB Garamond", serif;
 }
 
-/* Chrome, Edge, and Safari */
+* {
+    font-family: var(--primary-font);
+}
+
+body {
+    background-color: var(--background);
+}
+
+#lightDarkToggle svg {
+    position: absolute;
+    width: 1vw;
+    height: 1vw;
+    color: var(--second-foreground);
+    background-color: var(--second-background);
+    border-radius: 0.5vw;
+    border: 2px solid var(--second-foreground);
+    padding: 0.5vw;
+    /* margin: 0.5vw; */
+    margin-top: 6vw;
+    margin-left: 0.5vw;
+    cursor: pointer;
+}
+#lightDarkToggle svg:hover {
+    border: 2px solid var(--second-background);
+    color: var(--second-background);
+    background-color: var(--second-foreground);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 0 0 0.25vw 0;
+    background-color: var(--second-background);
+    color: var(--second-foreground);
+    min-height: 5vw;
+    /* gap: 30px; */
+    margin: 0;
+}
+
+.header h1 {
+    font-size: 3.5vw;
+    color: var(--second-foreground);
+    font-weight: 400;
+    margin: 0;
+}
+
+.header .link {
+    font-size: 1.5vw;
+    text-decoration: none;
+    color: var(--second-foreground);
+    font-weight: 500;
+    margin: 0;
+    /* font-style: italic; */
+    width: 15%;
+}
+
+#pageTitle {
+    font-size: 3.5vw;
+    color: var(--second-foreground);
+    font-weight: 400;
+    margin: 0;
+    width: 30%;
+}
+
+.main {
+    min-height: 190vh;
+    background-color: var(--background);
+    color: var(--second-foreground);
+    /* text-align: center; */
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+}
+
+h1 {
+    padding: 0px;
+    font-weight: 900;
+    margin: 0;
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--foreground) var(--second-background);
+}
+
 *::-webkit-scrollbar {
     width: 10px;
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--dark-colour);
+    background: var(--second-background);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-accent);
+    background-color: var(--foreground);
     border-radius: 10px;
     border: 0px double var(--lighter-secondary-accent);
 }
 
-a {
-    text-decoration: none;
-    color: var(--lighter-secondary-accent);
-}
-
-#page-name {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: var(--primary-accent);
-    font-size: calc(30px + 2vmin);
-}
-
-h1 {
-    font-weight: 900;
-}
-
 .noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.colour-transition {
+    -moz-transition: color 2s ease-in;
+    -o-transition: color 2s ease-in;
+    -webkit-transition: color 2s ease-in;
+    transition: color 2s ease-in;
+    -moz-transition: background-color 2s ease-in;
+    -o-transition: background-color 2s ease-in;
+    -webkit-transition: background-color 2s ease-in;
+    transition: background-color 2s ease-in;
 }

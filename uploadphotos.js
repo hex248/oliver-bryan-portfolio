@@ -1,6 +1,5 @@
 const fs = require("fs");
 const fse = require("fs-extra");
-const { compress } = require("compress-images/promise");
 const simpleGit = require("simple-git");
 const { v4 } = require("uuid");
 const sharp = require("sharp");
