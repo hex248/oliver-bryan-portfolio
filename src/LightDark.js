@@ -3,9 +3,9 @@ import { MoonIcon, SunIcon } from "@primer/octicons-react";
 
 const LightDark = ({ onClick, icon }) => {
     return (
-        <a id="lightDarkToggle" onClick={onClick}>
-            {icon == "sun" ? <SunIcon /> : <MoonIcon />}
-        </a>
+        <div id="lightDarkToggle" className="colour-transition" onClick={onClick}>
+            {icon === "sun" ? <SunIcon /> : <MoonIcon />}
+        </div>
     );
 };
 
