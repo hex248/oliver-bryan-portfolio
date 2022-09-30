@@ -1,78 +1,221 @@
 import React, { useState, useEffect } from "react";
 
 import people from "./photos/people.json";
-import environment from "./photos/environment.json";
+import street from "./photos/street.json";
+
+import { shuffle } from "shuffle-seed";
+
+import { ArrowUpIcon } from "@primer/octicons-react";
 
 const Gallery = ({ category }) => {
     const [photos, setPhotos] = useState([]);
+
+    const [peoplePhotos, setPeoplePhotos] = useState([]);
+    const [streetPhotos, setStreetPhotos] = useState([]);
     useEffect(() => {
         if (photos.length < 1) {
             console.log(category);
             console.log(people);
+            let seed = Math.random();
+            if (localStorage.getItem("seed") && Date.now() - localStorage.getItem("seedCreationTime") <= 60000) {
+                seed = localStorage.getItem("seed");
+            } else {
+                localStorage.setItem("seed", seed);
+                localStorage.setItem("seedCreationTime", Date.now());
+            }
+            let peopleArr = shuffle(people, seed);
+            setPeoplePhotos(peopleArr);
+            let streetArr = shuffle(street, seed);
+            setStreetPhotos(streetArr);
             switch (category) {
                 case "people":
-                    setPhotos(shuffle(people));
+                    setPhotos(peopleArr);
                     break;
-                case "environment":
-                    setPhotos(shuffle(environment));
+                case "street":
+                    setPhotos(streetArr);
                     break;
                 default:
                     setPhotos([]);
                     break;
             }
         }
-    }, []);
+    }, [photos.length, category]);
 
-    // const columnCount = 3;
-    const columns = [0, 1, 2];
+    useEffect(() => {
+        if (category === "people" && streetPhotos.includes(photos[0])) {
+            setPhotos(peoplePhotos);
+        } else if (category === "street" && peoplePhotos.includes(photos[0])) {
+            setPhotos(streetPhotos);
+        }
+    }, [category, peoplePhotos, streetPhotos, photos]);
 
-    const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
+    const columnCount = 3;
 
     const Grid = () => {
-        return (
-            <div className="gridRow">
-                {columns.length > 0
-                    ? columns.map((i) => (
-                          <div className="gridColumn" key={i}>
-                              {photos
-                                  ? photos.slice(clamp(i - 1, 0, columns.length), clamp(i - 1, 0, columns.length) * Math.floor(photos.length / columns.length)).map((p) => {
-                                        console.log(p);
-                                        return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
-                                    })
-                                  : ""}
-                          </div>
-                      ))
-                    : ""}
-            </div>
-        );
+        if (columnCount === 5) {
+            return (
+                <div className="gridRow">
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(0, Math.floor(photos.length / 5)).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 5), Math.floor(photos.length / 5) * 2).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 5) * 2, Math.floor(photos.length / 5) * 3).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 5) * 3, Math.floor(photos.length / 5) * 4).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 5) * 4, photos.length).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                </div>
+            );
+        } else if (columnCount === 4) {
+            return (
+                <div className="gridRow">
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(0, Math.floor(photos.length / 4)).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 4), Math.floor(photos.length / 4) * 2).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 4) * 2, Math.floor(photos.length / 4) * 3).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 4) * 3, photos.length).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                </div>
+            );
+        } else if (columnCount === 3) {
+            return (
+                <div className="gridRow">
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(0, Math.floor(photos.length / 3)).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 3), Math.floor(photos.length / 3) * 2).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 3) * 2, photos.length).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                </div>
+            );
+        } else if (columnCount === 2) {
+            return (
+                <div className="gridRow">
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(0, Math.floor(photos.length / 2)).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.slice(Math.floor(photos.length / 2), photos.length).map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                </div>
+            );
+        } else if (columnCount === 1) {
+            return (
+                <div className="gridRow">
+                    <div className="gridColumn">
+                        {photos
+                            ? photos.map((p) => {
+                                  console.log(p);
+                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                              })
+                            : ""}
+                    </div>
+                </div>
+            );
+        }
     };
 
     return (
-        <>
-            <div className="main">
-                <h1 id="galleryCategoryTitle">{category.toUpperCase()}</h1>
+        <div className="scrollableElement colour-transition">
+            <div className="main colour-transition">
+                <h1 id="galleryCategoryTitle" className="colour-transition">
+                    {category.toUpperCase()}
+                </h1>
+                <div className="flexBreak" />
                 <Grid />
-                {/* <img src={`/photos/${category}/web-size/${photos[0]}`}></img> */}
             </div>
-        </>
+            <div className="back-to-top-wrapper">
+                <a href="#top" className="back-to-top-link colour-transition-0-1s" aria-label="Scroll to Top">
+                    <ArrowUpIcon className="colour-transition-0-1s" size={32} />
+                </a>
+            </div>
+        </div>
     );
 };
 
 export default Gallery;
-
-function shuffle(array) {
-    let currentIndex = array.length,
-        randomIndex;
-
-    // While there remain elements to shuffle.
-    while (currentIndex !== 0) {
-        // Pick a remaining element.
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        // And swap it with the current element.
-        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
-}
