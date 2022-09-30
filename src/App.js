@@ -17,15 +17,15 @@ export default function App() {
     const [ldIcon, setLDIcon] = useState("");
 
     useEffect(() => {
-        if (localStorage.getItem("colourMode") == "dark") {
+        if (localStorage.getItem("colourMode") === "dark") {
             SetDarkMode();
-        } else if (localStorage.getItem("colourMode") == "light") {
+        } else if (localStorage.getItem("colourMode") === "light") {
             SetLightMode();
         }
     }, []);
 
     const ToggleDarkMode = () => {
-        if (localStorage.getItem("colourMode") == "dark") {
+        if (localStorage.getItem("colourMode") === "dark") {
             SetLightMode();
         } else {
             SetDarkMode();
@@ -58,7 +58,7 @@ export default function App() {
                 <Routes>
                     <Route index element={<Home />} />
                     <Route path="portraits" element={<Gallery category={"people"} />} />
-                    <Route path="street" element={<Gallery category={"environment"} />} />
+                    <Route path="street" element={<Gallery category={"street"} />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="about" element={<About />} />
                     <Route path="*" element={<App />} />
