@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
+import MediaQuery from "react-responsive";
 
 import people from "./photos/people.json";
 import street from "./photos/street.json";
 
-import { shuffle } from "shuffle-seed";
+import LightDark from "./LightDark";
 
+import { shuffle } from "shuffle-seed";
 import { ArrowUpIcon } from "@primer/octicons-react";
+import { useMediaQuery } from "react-responsive";
 
 const Gallery = ({ category }) => {
     const [photos, setPhotos] = useState([]);
@@ -49,7 +52,7 @@ const Gallery = ({ category }) => {
         }
     }, [category, peoplePhotos, streetPhotos, photos]);
 
-    const columnCount = 3;
+    const columnCount = useMediaQuery({ query: "(max-width: 701px)" }) ? 2 : 3; // mobile -> 2 columns, otherwise 3
 
     const Grid = () => {
         if (columnCount === 5) {
@@ -201,20 +204,25 @@ const Gallery = ({ category }) => {
     };
 
     return (
-        <div className="scrollableElement colour-transition">
-            <div className="main colour-transition">
-                <h1 id="galleryCategoryTitle" className="colour-transition">
-                    {category.toUpperCase()}
-                </h1>
-                <div className="flexBreak" />
-                <Grid />
+        <>
+            <MediaQuery minWidth={701}>
+                <LightDark />
+            </MediaQuery>
+            <div className="scrollableElement colour-transition">
+                <div className="main colour-transition">
+                    <h1 id="galleryCategoryTitle" className="colour-transition">
+                        {category.toUpperCase()}
+                    </h1>
+                    <div className="flexBreak" />
+                    <Grid />
+                </div>
+                <div className="back-to-top-wrapper">
+                    <a href="#top" className="back-to-top-link colour-transition-0-1s" aria-label="Scroll to Top">
+                        <ArrowUpIcon className="colour-transition-0-1s" size={32} />
+                    </a>
+                </div>
             </div>
-            <div className="back-to-top-wrapper">
-                <a href="#top" className="back-to-top-link colour-transition-0-1s" aria-label="Scroll to Top">
-                    <ArrowUpIcon className="colour-transition-0-1s" size={32} />
-                </a>
-            </div>
-        </div>
+        </>
     );
 };
 

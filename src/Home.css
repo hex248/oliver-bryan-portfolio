@@ -1,0 +1,22 @@
+#homeBackground {
+    width: 100%;
+}
+
+#homeMain {
+    padding-bottom: 0;
+}
+
+#homeOverlay {
+    position: absolute;
+    left: 5vw;
+    top: 40vh;
+    text-align: center;
+    background-color: #1b1b1b75;
+    padding: 25px;
+    border-radius: 7.5px;
+}
+
+.overlayText {
+    font-size: calc(15px + 2vw);
+    color: #ffffff;
+}

@@ -1,13 +1,11 @@
-@import url("https://fonts.googleapis.com/css1?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
-
 :root {
-    --background: #eeeeee;
-    --second-background: #ffffff;
-    --foreground: #040404;
-    --second-foreground: #000000;
+    --background: #040404;
+    --second-background: #000000;
+    --foreground: #eeeeee;
+    --second-foreground: #ffffff;
     --mid: #808080;
     /* --primary-font: "ts_block_bold"; */
-    --primary-font: "EB Garamond", serif;
+    --primary-font: "Times New Roman", serif;
 }
 
 * {
@@ -29,75 +27,133 @@ body {
     transition: background-color 0.5s ease-in;
 }
 
-#lightDarkToggle svg {
+#newLightDark {
     position: absolute;
-    width: 0.8vw;
-    height: 0.8vw;
+    margin: 1vh 0.5vw;
+}
+
+#newLightDark svg {
+    width: 2vw;
+    height: 2vw;
     color: var(--second-foreground);
     background-color: var(--second-background);
-    border-radius: 0.4vw;
+    border-radius: 1vw;
     border: 0.15vw solid var(--second-foreground);
-    padding: 0.15vw;
+    padding: 0.75vw;
     /* margin: 0.5vw; */
-    margin-top: 5.6vw;
-    margin-left: 0.35vw;
     cursor: pointer;
 }
-#lightDarkToggle svg:hover {
+
+#newLightDark svg:hover {
     border: 0.15vw solid var(--second-foreground);
     color: var(--second-background);
     background-color: var(--second-foreground);
 }
 
+@media screen and (max-width: 700px) {
+    #newLightDark {
+        margin: 5px;
+    }
+    #newLightDark svg {
+        width: 4vw;
+        height: 4vw;
+        border-radius: 1.5vw;
+        border: 0.35vw solid var(--second-foreground);
+    }
+}
+
+#lightDarkToggle {
+    position: absolute;
+    top: 9vh;
+    left: 0.5vw;
+}
+
+#lightDarkToggle svg {
+    width: 1.5vw;
+    height: 1.5vw;
+    color: var(--second-foreground);
+    background-color: var(--second-background);
+    border-radius: 0.4vw;
+    border: 0.15vw solid var(--second-foreground);
+    padding: 0.5vw;
+    /* margin: 0.5vw; */
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    #lightDarkToggle {
+        top: 17.5vh;
+        left: 4vw;
+    }
+
+    #lightDarkToggle svg {
+        width: 5vw;
+        height: 5vw;
+        border-radius: 1.5vw;
+        border: 0.35vw solid var(--second-foreground);
+    }
+}
+
 .header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
     padding: 0 0 0.15vw 0;
     background-color: var(--second-background);
     color: var(--second-foreground);
-    min-height: 5vw;
+    min-height: 5vh;
     /* gap: 30px; */
     margin: 0;
 }
 
 .header h1 {
-    font-size: 3.5vw;
+    font-size: calc(10px + 2vw);
     color: var(--second-foreground);
     font-weight: 400;
     margin: 0;
 }
 
 .header .link {
-    font-size: 1.5vw;
+    font-size: calc(2px + 2vw);
     text-decoration: none;
     color: var(--second-foreground);
     font-weight: 500;
     margin: 0;
     /* font-style: italic; */
-    width: 15%;
+    flex-basis: 15%;
+}
+
+#pageTitle {
+    font-size: calc(6px + 3vw);
+    color: var(--second-foreground);
+    font-weight: 400;
+    margin: 0;
+    flex-basis: 30%;
+}
+
+@media screen and (max-width: 700px) {
+    #pageTitle {
+        font-size: calc(20px + 3vw);
+        flex-basis: 100%;
+    }
+    .header .link {
+        flex-basis: 20%;
+        font-size: calc(10px + 2vw);
+    }
 }
 
 .contactLink {
-    font-size: 1.5vw;
+    font-size: calc(2px + 2vw);
     text-decoration: underline;
     color: var(--second-foreground);
     font-weight: 500;
     margin: 0;
 }
 
-#pageTitle {
-    font-size: 3.5vw;
-    color: var(--second-foreground);
-    font-weight: 400;
-    margin: 0;
-    width: 30%;
-}
-
 .main {
-    min-height: 190vh;
-    background-color: var(--background);
+    /* background-color: var(--background); */
     color: var(--second-foreground);
     /* text-align: center; */
     /* padding: 15px; */
