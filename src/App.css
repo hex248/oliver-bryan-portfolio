@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
+
 :root {
     --background: #040404;
     --second-background: #000000;
@@ -5,7 +7,7 @@
     --second-foreground: #ffffff;
     --mid: #808080;
     /* --primary-font: "ts_block_bold"; */
-    --primary-font: "Times New Roman", serif;
+    --primary-font: "Cardo", serif;
 }
 
 * {
@@ -33,13 +35,15 @@ body {
 }
 
 #lightDarkToggle svg {
-    width: 2vw;
-    height: 2vw;
+    width: 20px;
+    height: 20px;
+    max-width: 7.5vw;
+    max-height: 7.5vw;
     color: var(--second-foreground);
     background-color: var(--second-background);
-    border-radius: 1vw;
-    border: 0.15vw solid var(--second-foreground);
-    padding: 0.75vw;
+    border-radius: 10px;
+    border: 2.5px solid var(--second-foreground);
+    padding: 6.5px;
     /* margin: 0.5vw; */
     cursor: pointer;
 }
@@ -55,10 +59,13 @@ body {
         margin: 5px;
     }
     #lightDarkToggle svg {
-        width: 4vw;
-        height: 4vw;
-        border-radius: 1.5vw;
-        border: 0.35vw solid var(--second-foreground);
+        width: 15px;
+        height: 15px;
+        max-width: 7.5vw;
+        max-height: 7.5vw;
+        padding: 5px;
+        border-radius: 7.5px;
+        border: 2.5px solid var(--second-foreground);
     }
 }
 
@@ -112,19 +119,49 @@ body {
     }
 }
 
+#contactMain {
+    display: block;
+    text-align: center;
+}
+
+#contactTitle {
+    font-size: calc(5px + 3.5vw);
+}
+
+@media screen and (max-width: 700px) {
+    #contactTitle {
+        font-size: calc(15px + 10vw);
+    }
+}
+
+#contactBox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    text-align: center;
+}
+
 .contactLink {
-    font-size: calc(2px + 2vw);
-    text-decoration: underline;
-    color: var(--second-foreground);
-    font-weight: 500;
-    margin: 0;
+    flex-basis: 100%;
+}
+
+@media screen and (max-width: 700px) {
+    .contactLink {
+        font-size: calc(15px + 10vw);
+    }
+}
+
+.contactIcon {
+    color: #4747c5;
+}
+
+.socialIcon {
+    min-width: 100px;
+    min-height: 100px;
 }
 
 .main {
-    /* background-color: var(--background); */
     color: var(--second-foreground);
-    /* text-align: center; */
-    /* padding: 15px; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
