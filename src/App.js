@@ -2,8 +2,10 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
-import "./Gallery.css";
 import "./Home.css";
+import "./Gallery.css";
+import "./Contact.css";
+import "./About.css";
 import "./font.css";
 
 import Home from "./Home";
