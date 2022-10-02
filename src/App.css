@@ -1,47 +1,228 @@
-* {
-    /* background-color: var(--dark-colour); */
-    color: var(--secondary-accent);
-    scrollbar-width: auto;
-    scrollbar-color: var(--primary-accent) var(--dark-colour);
+@import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
+
+:root {
+    --background: #040404;
+    --second-background: #000000;
+    --foreground: #eeeeee;
+    --second-foreground: #ffffff;
+    --mid: #808080;
+    /* --primary-font: "ts_block_bold"; */
+    --primary-font: "Cardo", serif;
 }
 
-/* Chrome, Edge, and Safari */
+* {
+    font-family: var(--primary-font);
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    -moz-transition: background-color 0.5s ease-in;
+    -o-transition: background-color 0.5s ease-in;
+    -webkit-transition: background-color 0.5s ease-in;
+    transition: background-color 0.5s ease-in;
+}
+
+#lightDarkToggle {
+    position: absolute;
+    margin: 1vh 0.5vw;
+}
+
+#lightDarkToggle svg {
+    width: 20px;
+    height: 20px;
+    max-width: 7.5vw;
+    max-height: 7.5vw;
+    color: var(--second-foreground);
+    background-color: var(--second-background);
+    border-radius: 10px;
+    border: 2.5px solid var(--second-foreground);
+    padding: 6.5px;
+    /* margin: 0.5vw; */
+    cursor: pointer;
+}
+
+#lightDarkToggle svg:hover {
+    border: 0.15vw solid var(--second-foreground);
+    color: var(--second-background);
+    background-color: var(--second-foreground);
+}
+
+@media screen and (max-width: 700px) {
+    #lightDarkToggle {
+        margin: 5px;
+    }
+    #lightDarkToggle svg {
+        width: 15px;
+        height: 15px;
+        max-width: 7.5vw;
+        max-height: 7.5vw;
+        padding: 5px;
+        border-radius: 7.5px;
+        border: 2.5px solid var(--second-foreground);
+    }
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 0 0 0.15vw 0;
+    background-color: var(--second-background);
+    color: var(--second-foreground);
+    min-height: 5vh;
+    /* gap: 30px; */
+    margin: 0;
+    border-bottom: 2px solid var(--mid);
+}
+
+.header h1 {
+    font-size: calc(15px + 2vw);
+    color: var(--second-foreground);
+    font-weight: 400;
+    margin: 0;
+}
+
+.header .link {
+    font-size: calc(10px + 1.5vw);
+    text-decoration: none;
+    color: var(--second-foreground);
+    font-weight: 500;
+    margin: 0;
+    /* font-style: italic; */
+    flex-basis: 15%;
+}
+
+.header .link:hover {
+    color: var(--mid);
+}
+
+#pageTitle {
+    font-size: calc(15px + 3vw);
+    color: var(--second-foreground);
+    font-weight: 400;
+    margin: 0;
+    flex-basis: 30%;
+}
+
+@media screen and (max-width: 700px) {
+    .header .link {
+        font-size: calc(2px + 2vw);
+    }
+
+    #pageTitle {
+        font-size: calc(20px + 3vw);
+        flex-basis: 100%;
+    }
+    .header .link {
+        flex-basis: 20%;
+        font-size: calc(10px + 2vw);
+    }
+}
+
+@media screen and (max-width: 700px) {
+}
+
+.embeddedLink {
+    text-decoration: underline;
+    font-weight: 800;
+    color: var(--second-foreground);
+    border-radius: 5px;
+    background-color: var(--background);
+    padding: 5px;
+}
+
+.embeddedLink:hover {
+    color: var(--background);
+    background-color: var(--second-foreground);
+}
+
+.main {
+    color: var(--second-foreground);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0;
+    padding-bottom: 50px;
+}
+
+h1 {
+    padding: 0px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.flexBreak {
+    flex-basis: 100%;
+    height: 0;
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--foreground) var(--second-background);
+    -moz-transition: scrollbar-color 0.5s ease-in;
+    -o-transition: scrollbar-color 0.5s ease-in;
+    -webkit-transition: scrollbar-color 0.5s ease-in;
+    transition: scrollbar-color 0.5s ease-in;
+}
+
 *::-webkit-scrollbar {
     width: 10px;
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--dark-colour);
+    background: var(--second-background);
+    -moz-transition: background-color 0.5s ease-in;
+    -o-transition: background-color 0.5s ease-in;
+    -webkit-transition: background-color 0.5s ease-in;
+    transition: background-color 0.5s ease-in;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: var(--primary-accent);
+    background-color: var(--foreground);
+    -moz-transition: background-color 0.5s ease-in;
+    -o-transition: background-color 0.5s ease-in;
+    -webkit-transition: background-color 0.5s ease-in;
+    transition: background-color 0.5s ease-in;
     border-radius: 10px;
     border: 0px double var(--lighter-secondary-accent);
 }
 
-a {
-    text-decoration: none;
-    color: var(--lighter-secondary-accent);
-}
-
-#page-name {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: var(--primary-accent);
-    font-size: calc(30px + 2vmin);
-}
-
-h1 {
-    font-weight: 900;
-}
-
 .noselect {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                    supported by Chrome, Edge, Opera and Firefox */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.colour-transition {
+    -moz-transition: color 0.5s ease-in;
+    -o-transition: color 0.5s ease-in;
+    -webkit-transition: color 0.5s ease-in;
+    transition: color 0.5s ease-in;
+    -moz-transition: background-color 0.5s ease-in;
+    -o-transition: background-color 0.5s ease-in;
+    -webkit-transition: background-color 0.5s ease-in;
+    transition: background-color 0.5s ease-in;
+}
+
+.colour-transition-0-1s {
+    -moz-transition: color 0.1s ease-in;
+    -o-transition: color 0.1s ease-in;
+    -webkit-transition: color 0.1s ease-in;
+    transition: color 0.1s ease-in;
+    -moz-transition: background-color 0.1s ease-in;
+    -o-transition: background-color 0.1s ease-in;
+    -webkit-transition: background-color 0.1s ease-in;
+    transition: background-color 0.1s ease-in;
 }

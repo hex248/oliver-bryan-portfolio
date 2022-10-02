@@ -1,26 +1,23 @@
-// import "./App.css";
-import "./Home.css";
-import SocialIcons from "./SocialIcons.js";
+import React from "react";
+import MediaQuery from "react-responsive";
+import LightDark from "./LightDark";
 
-function Home() {
+const Home = () => {
     return (
-        <div className="Home">
-            <header className="Home-header">
-                <h1 className="noselect">oliver bryan</h1>
-                <a href="/work" className="Page-link noselect">
-                    Work
-                </a>
-                <a href="/videos" className="Page-link noselect">
-                    Videos
-                </a>
-                <a href="/about" className="Page-link noselect">
-                    About
-                </a>
-            </header>
-
-            <SocialIcons />
-        </div>
+        <>
+            <MediaQuery minWidth={701}>
+                <LightDark />
+            </MediaQuery>
+            <div className="main colour-transition" id="homeMain">
+                <MediaQuery minWidth={701}>
+                    <img id="homeBackground" src="/photos/me/Home.jpg" alt="home"></img>
+                </MediaQuery>
+                <MediaQuery maxWidth={700}>
+                    <img id="homeBackground" src="/photos/me/HomeMobile.jpg" alt="home"></img>
+                </MediaQuery>
+            </div>
+        </>
     );
-}
+};
 
 export default Home;
