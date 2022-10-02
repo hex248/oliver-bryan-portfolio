@@ -46,7 +46,7 @@ const LightDark = () => {
     //     </div>
     // );
     return (
-        <div id="newLightDark" className="colour-transition" onClick={ToggleDarkMode}>
+        <div id="lightDarkToggle" className="colour-transition" onClick={ToggleDarkMode}>
             {ldIcon === "sun" ? <SunIcon /> : <MoonIcon />}
         </div>
     );
