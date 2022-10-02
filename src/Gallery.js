@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MediaQuery from "react-responsive";
 
-import people from "./photos/people.json";
+import portraits from "./photos/portraits.json";
 import street from "./photos/street.json";
 
 import LightDark from "./LightDark";
@@ -13,12 +13,12 @@ import { useMediaQuery } from "react-responsive";
 const Gallery = ({ category }) => {
     const [photos, setPhotos] = useState([]);
 
-    const [peoplePhotos, setPeoplePhotos] = useState([]);
+    const [portraitsPhotos, setportraitsPhotos] = useState([]);
     const [streetPhotos, setStreetPhotos] = useState([]);
     useEffect(() => {
         if (photos.length < 1) {
             console.log(category);
-            console.log(people);
+            console.log(portraits);
             let seed = Math.random();
             if (localStorage.getItem("seed") && Date.now() - localStorage.getItem("seedCreationTime") <= 60000) {
                 seed = localStorage.getItem("seed");
@@ -26,13 +26,13 @@ const Gallery = ({ category }) => {
                 localStorage.setItem("seed", seed);
                 localStorage.setItem("seedCreationTime", Date.now());
             }
-            let peopleArr = shuffle(people, seed);
-            setPeoplePhotos(peopleArr);
+            let portraitsArr = shuffle(portraits, seed);
+            setportraitsPhotos(portraitsArr);
             let streetArr = shuffle(street, seed);
             setStreetPhotos(streetArr);
             switch (category) {
-                case "people":
-                    setPhotos(peopleArr);
+                case "portraits":
+                    setPhotos(portraitsArr);
                     break;
                 case "street":
                     setPhotos(streetArr);
@@ -45,12 +45,12 @@ const Gallery = ({ category }) => {
     }, [photos.length, category]);
 
     useEffect(() => {
-        if (category === "people" && streetPhotos.includes(photos[0])) {
-            setPhotos(peoplePhotos);
-        } else if (category === "street" && peoplePhotos.includes(photos[0])) {
+        if (category === "portraits" && streetPhotos.includes(photos[0])) {
+            setPhotos(portraitsPhotos);
+        } else if (category === "street" && portraitsPhotos.includes(photos[0])) {
             setPhotos(streetPhotos);
         }
-    }, [category, peoplePhotos, streetPhotos, photos]);
+    }, [category, portraitsPhotos, streetPhotos, photos]);
 
     const columnCount = useMediaQuery({ query: "(max-width: 701px)" }) ? 2 : 3; // mobile -> 2 columns, otherwise 3
 

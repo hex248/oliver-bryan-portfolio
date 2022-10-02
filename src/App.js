@@ -21,7 +21,7 @@ export default function App() {
                 <Header />
                 <Routes>
                     <Route index element={<Home />} />
-                    <Route path="portraits" element={<Gallery category={"people"} />} />
+                    <Route path="portraits" element={<Gallery category={"portraits"} />} />
                     <Route path="street" element={<Gallery category={"street"} />} />
                     <Route path="contact" element={<Contact />} />
                     <Route path="about" element={<About />} />
