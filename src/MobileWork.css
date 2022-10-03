@@ -1,0 +1,45 @@
+.grid-image-mobile {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    line-height: 0;
+    left: 0%;
+    z-index: 1;
+}
+
+.portfolio-overlay-mobile {
+    top: 0%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    margin: 0;
+    line-height: 0;
+    left: 0%;
+    z-index: 2;
+    opacity: 50%;
+    opacity: 1;
+    transition: opacity 0.25s ease-out;
+    -moz-transition: opacity 0.25s ease-out;
+    -webkit-transition: opacity 0.25s ease-out;
+    -o-transition: opacity 0.25s ease-out;
+}
+
+.portfolio-overlay-mobile:hover {
+    opacity: 0%;
+}
+
+.grid-item-mobile {
+    position: relative;
+    text-decoration: none;
+}
+
+.portfolio-grid-mobile {
+    display: grid;
+    height: 75vh;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-row-gap: 2vh;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    box-sizing: border-box;
+}

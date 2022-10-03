@@ -1,75 +1,59 @@
-#galleryCategoryTitle {
-    font-weight: 400;
-    font-size: 5vw;
+.Home {
+    text-align: center;
+    font-family: "ts_blockbold";
+    background-color: var(--dark-colour);
+    min-height: 100vh;
+    color: var(--lighter-secondary-accent);
 }
 
-@media screen and (max-width: 700px) {
-    #galleryCategoryTitle {
-        font-size: 15vw;
-    }
+.Home-header {
+    background-color: var(--dark-colour);
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(20px + 2vmin);
+    color: var(--lighter-secondary-accent);
 }
 
 .gridRow {
     display: flex;
     flex-wrap: wrap;
+    padding: 0 4px;
     justify-content: center;
-    flex-basis: 95%;
-    max-width: 1920px;
 }
 
 .gridColumn {
-    flex: 10%;
+    flex: 30%;
+    max-width: 500px;
     padding: 0 4px;
 }
 
 .gridColumn img {
-    margin-bottom: 8px;
+    margin-top: 8px;
     vertical-align: middle;
     width: 100%;
 }
 
-.scrollableElement {
-    pointer-events: none;
-    padding: 0 0;
-    position: relative;
-    max-width: 112rem;
-    margin: 0rem auto;
-    background-color: none;
-    color: none;
+#page-name {
+    font-size: 4.5vw;
+    color: var(--lighter-secondary-accent);
 }
 
-.back-to-top-link {
-    position: fixed;
-    position: sticky;
-    pointer-events: all;
-    top: calc(100vh - 3.5rem);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    background-color: var(--second-foreground);
-    border: 2px solid var(--second-foreground);
+#gallery-nav {
+    font-size: 3vw;
+    padding-bottom: 6vh;
 }
 
-.back-to-top-link svg {
-    color: var(--second-background);
-}
-
-.back-to-top-link:hover {
-    background-color: var(--second-background);
-}
-.back-to-top-link:hover svg {
-    color: var(--second-foreground);
-}
-
-.back-to-top-wrapper {
+#left-nav {
     position: absolute;
-    top: 100vh;
-    right: 1vw;
-    bottom: 0;
-    width: 3em;
-    pointer-events: none;
+    left: 3vw;
+    text-align: left;
+}
+
+#right-nav {
+    position: absolute;
+    right: 3vw;
+    text-align: right;
 }

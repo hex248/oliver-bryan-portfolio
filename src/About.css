@@ -1,26 +1,24 @@
-#aboutMain {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+
+.Home {
     text-align: center;
+    font-family: "ts_blockbold";
+    background-color: var(--dark-colour);
+    min-height: 100vh;
+    color: var(--lighter-pink);
 }
 
-#aboutTitle {
-    flex-basis: 100%;
-    font-weight: 400;
-    font-size: calc(5px + 3.5vw);
-}
-#aboutDescription {
-    font-weight: 400;
-    font-size: calc(5px + 1.5vw);
+.Home-header {
+    background-color: var(--dark-colour);
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(20px + 2vmin);
+    color: var(--lighter-secondary-accent);
 }
 
-@media screen and (max-width: 700px) {
-    #aboutTitle {
-        font-size: calc(15px + 10vw);
-    }
-
-    #aboutDescription {
-        font-size: calc(15px + 3.5vw);
-    }
+p {
+    font-size: calc(15px + 2vmin);
 }

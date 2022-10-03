@@ -1,5 +1,6 @@
 const fs = require("fs");
 const fse = require("fs-extra");
+const { compress } = require("compress-images/promise");
 const simpleGit = require("simple-git");
 const { v4 } = require("uuid");
 const sharp = require("sharp");
@@ -33,28 +34,29 @@ const go = async () => {
     // write to json indexes
     updateJSON();
     // git commit changes to web-size and json indexes
-    // const git = simpleGit();
+    const git = simpleGit();
 
-    // for (let dir of directories) {
-    //     git.add([`./public/photos/${dir}/web-size/`, `./src/photos/${dir}.json`]);
-    // }
+    for (let dir of directories) {
+        git.add([`./public/photos/${dir}/web-size/`, `./src/photos/${dir}.json`]);
+    }
 
-    // git.commit("Updated Photos via uploadphotos.js");
+    git.commit("Updated Photos via uploadphotos.js");
 
-    // // git push
+    // git push
 
-    // git.push();
+    git.push();
 
     // clear uploadqueue
-    fse.emptyDirSync("./uploadqueue/portraits");
-    fse.emptyDirSync("./uploadqueue/street");
+    fse.emptyDirSync("./uploadqueue/people");
+    fse.emptyDirSync("./uploadqueue/environment");
     fse.emptyDirSync("./uploadqueue/nature");
 };
 
 const updateJSON = () => {
-    fs.writeFileSync("./src/photos/portraits.json", JSON.stringify(fs.readdirSync("./public/photos/portraits/web-size").filter((f) => f.endsWith(".jpg"))));
-    fs.writeFileSync("./src/photos/street.json", JSON.stringify(fs.readdirSync("./public/photos/street/web-size").filter((f) => f.endsWith(".jpg"))));
+    fs.writeFileSync("./src/photos/people.json", JSON.stringify(fs.readdirSync("./public/photos/people/web-size").filter((f) => f.endsWith(".jpg"))));
+    fs.writeFileSync("./src/photos/environment.json", JSON.stringify(fs.readdirSync("./public/photos/environment/web-size").filter((f) => f.endsWith(".jpg"))));
     fs.writeFileSync("./src/photos/nature.json", JSON.stringify(fs.readdirSync("./public/photos/nature/web-size").filter((f) => f.endsWith(".jpg"))));
 };
 
 go();
+// updateJSON();
