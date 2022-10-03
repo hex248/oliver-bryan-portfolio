@@ -1,31 +1,23 @@
-import React from "react";
-import MediaQuery from "react-responsive";
-import LightDark from "./LightDark";
+import "./App.css";
+import "./About.css";
+import SocialIcons from "./SocialIcons.js";
 
-const About = () => {
+function About() {
     return (
-        <>
-            <MediaQuery minWidth={701}>
-                <LightDark />
-            </MediaQuery>
-            <div className="main colour-transition" id="aboutMain">
-                <h1 id="aboutTitle">ABOUT</h1>
-                <h1 id="aboutDescription">
-                    Portrait and street photographer
-                    <br />
-                    17 years old
-                    <br />
-                    Based in London
-                    <br />
-                    See more at:
-                    <br />
-                    <a href="https://home.oliverbryan.com" target="_blank" rel="noreferrer" className="embeddedLink">
-                        home.oliverbryan.com
-                    </a>
-                </h1>
-            </div>
-        </>
+        <div className="Home">
+            <header className="Home-header">
+                <a href="/">oliver bryan</a>
+            </header>
+            <h1 id="page-name">About</h1>
+            <p>
+                Based in London, United Kingdom. 17 years old.
+                <br />
+                Studying full time at East London Arts & Music.
+            </p>
+
+            <SocialIcons />
+        </div>
     );
-};
+}
 
 export default About;
