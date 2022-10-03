@@ -9,7 +9,7 @@ const About = () => {
                 <LightDark />
             </MediaQuery>
             <div className="main colour-transition" id="aboutMain">
-                <h1 id="aboutTitle">ABOUT</h1>
+                <h1 id="aboutTitle">About</h1>
                 <h1 id="aboutDescription">
                     Portrait and street photographer
                     <br />
@@ -17,8 +17,8 @@ const About = () => {
                     <br />
                     Based in London
                     <br />
-                    See more at:
                     <br />
+                    See more at: {/* <br /> */}
                     <a href="https://home.oliverbryan.com" target="_blank" rel="noreferrer" className="embeddedLink">
                         home.oliverbryan.com
                     </a>

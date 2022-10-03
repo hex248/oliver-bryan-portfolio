@@ -1,6 +1,9 @@
 #galleryCategoryTitle {
     font-weight: 400;
-    font-size: 5vw;
+    font-size: 3.5vw;
+    padding: 50px;
+    /* border: 1px solid var(--foreground);
+    border-radius: 10px; */
 }
 
 @media screen and (max-width: 700px) {

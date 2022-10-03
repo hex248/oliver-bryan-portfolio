@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
     --background: #040404;
@@ -6,8 +10,11 @@
     --foreground: #eeeeee;
     --second-foreground: #ffffff;
     --mid: #808080;
-    /* --primary-font: "ts_block_bold"; */
-    --primary-font: "Cardo", serif;
+    /* --primary-font: "Cardo", serif; */
+    /* --primary-font: "Rubik", sans-serif; */
+    /* --primary-font: "Poppins", sans-serif; */
+    /* --primary-font: "Raleway", sans-serif; */
+    --primary-font: "Montserrat", sans-serif;
 }
 
 * {
@@ -71,17 +78,17 @@ body {
 
 .header {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     text-align: center;
-    padding: 0 0 0.15vw 0;
+    padding: 0 1vw 0.15vw 1vw;
     background-color: var(--second-background);
     color: var(--second-foreground);
-    min-height: 5vh;
-    /* gap: 30px; */
+    min-height: 15vh;
+    column-gap: 30px;
     margin: 0;
-    border-bottom: 2px solid var(--mid);
+    /* border-bottom: 2px solid var(--second-foreground); */
 }
 
 .header h1 {
@@ -92,39 +99,58 @@ body {
 }
 
 .header .link {
-    font-size: calc(10px + 1.5vw);
+    font-size: calc(10px + 1vw);
     text-decoration: none;
     color: var(--second-foreground);
     font-weight: 500;
     margin: 0;
     /* font-style: italic; */
-    flex-basis: 15%;
 }
 
 .header .link:hover {
-    color: var(--mid);
+    /* color: var(--mid); */
+    /* font-weight: 600; */
+    text-decoration: underline;
 }
 
 #pageTitle {
-    font-size: calc(15px + 3vw);
+    text-decoration: none;
+    font-size: 5vw;
     color: var(--second-foreground);
     font-weight: 400;
     margin: 0;
-    flex-basis: 30%;
+    /* margin-right: 40vw; */
+    flex-basis: 75%;
+    text-align: left;
 }
 
 @media screen and (max-width: 700px) {
+    .header {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
     .header .link {
         font-size: calc(2px + 2vw);
     }
 
     #pageTitle {
-        font-size: calc(20px + 3vw);
+        font-size: calc(20px + 7.5vw);
+        font-weight: 600;
         flex-basis: 100%;
+        text-align: center;
     }
+
     .header .link {
-        flex-basis: 20%;
         font-size: calc(10px + 2vw);
+    }
+
+    .header .link:hover {
+        /* color: var(--mid); */
+        /* font-weight: 600; */
+        text-decoration: none;
     }
 }
 
@@ -133,11 +159,11 @@ body {
 
 .embeddedLink {
     text-decoration: underline;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--second-foreground);
     border-radius: 5px;
-    background-color: var(--background);
-    padding: 5px;
+    background-color: none;
+    padding: 2.5px;
 }
 
 .embeddedLink:hover {

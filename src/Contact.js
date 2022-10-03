@@ -11,7 +11,7 @@ const Contact = () => {
                 <LightDark />
             </MediaQuery>
             <div className="main colour-transition" id="contactMain">
-                <h1 id="contactTitle">CONTACT</h1>
+                <h1 id="contactTitle">Contact</h1>
                 <div id="contactBox">
                     <div className="contactLink">
                         <a href="https://www.instagram.com/oliverbryann" target="_blank" rel="noreferrer">

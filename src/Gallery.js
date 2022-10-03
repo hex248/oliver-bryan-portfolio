@@ -211,7 +211,7 @@ const Gallery = ({ category }) => {
             <div className="scrollableElement colour-transition">
                 <div className="main colour-transition">
                     <h1 id="galleryCategoryTitle" className="colour-transition">
-                        {category.toUpperCase()}
+                        {capitalise(category)}
                     </h1>
                     <div className="flexBreak" />
                     <Grid />
@@ -225,5 +225,9 @@ const Gallery = ({ category }) => {
         </>
     );
 };
+
+function capitalise(s) {
+    return s.charAt(0).toUpperCase() + s.slice(1);
+}
 
 export default Gallery;
