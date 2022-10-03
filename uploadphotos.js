@@ -48,13 +48,11 @@ const go = async () => {
     // clear uploadqueue
     fse.emptyDirSync("./uploadqueue/portraits");
     fse.emptyDirSync("./uploadqueue/street");
-    fse.emptyDirSync("./uploadqueue/nature");
 };
 
 const updateJSON = () => {
     fs.writeFileSync("./src/photos/portraits.json", JSON.stringify(fs.readdirSync("./public/photos/portraits/web-size").filter((f) => f.endsWith(".jpg"))));
     fs.writeFileSync("./src/photos/street.json", JSON.stringify(fs.readdirSync("./public/photos/street/web-size").filter((f) => f.endsWith(".jpg"))));
-    fs.writeFileSync("./src/photos/nature.json", JSON.stringify(fs.readdirSync("./public/photos/nature/web-size").filter((f) => f.endsWith(".jpg"))));
 };
 
 go();
