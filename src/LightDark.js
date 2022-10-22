@@ -24,7 +24,7 @@ const LightDark = () => {
 
     const SetLightMode = () => {
         localStorage.setItem("colourMode", "light");
-        document.documentElement.style.setProperty("--background", "#eeeeee");
+        document.documentElement.style.setProperty("--background", "#f3f3f3");
         document.documentElement.style.setProperty("--second-background", "#ffffff");
         document.documentElement.style.setProperty("--foreground", "#040404");
         document.documentElement.style.setProperty("--second-foreground", "#000000");
@@ -35,7 +35,7 @@ const LightDark = () => {
         localStorage.setItem("colourMode", "dark");
         document.documentElement.style.setProperty("--background", "#040404");
         document.documentElement.style.setProperty("--second-background", "#000000");
-        document.documentElement.style.setProperty("--foreground", "#eeeeee");
+        document.documentElement.style.setProperty("--foreground", "#f3f3f3");
         document.documentElement.style.setProperty("--second-foreground", "#ffffff");
         setLDIcon("sun");
     };

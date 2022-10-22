@@ -46,11 +46,13 @@ const go = async () => {
     // git.push();
 
     // clear uploadqueue
+    fse.emptyDirSync("./uploadqueue/events");
     fse.emptyDirSync("./uploadqueue/portraits");
     fse.emptyDirSync("./uploadqueue/street");
 };
 
 const updateJSON = () => {
+    fs.writeFileSync("./src/photos/events.json", JSON.stringify(fs.readdirSync("./public/photos/events/web-size").filter((f) => f.endsWith(".jpg"))));
     fs.writeFileSync("./src/photos/portraits.json", JSON.stringify(fs.readdirSync("./public/photos/portraits/web-size").filter((f) => f.endsWith(".jpg"))));
     fs.writeFileSync("./src/photos/street.json", JSON.stringify(fs.readdirSync("./public/photos/street/web-size").filter((f) => f.endsWith(".jpg"))));
 };

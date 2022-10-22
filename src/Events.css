@@ -1,0 +1,53 @@
+.eventsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.event {
+    background-color: var(--background);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    width: 40vw;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.event .images {
+    height: 450px;
+    flex-basis: 100%;
+    /* border: 1px solid red; */
+}
+
+.event .info {
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.eventName {
+    font-size: calc(15px + 1vw);
+    font-weight: 500;
+}
+.eventDate {
+    font-size: calc(10px + 1vw);
+    font-weight: 400;
+}
+
+@media screen and (max-width: 700px) {
+    .event {
+        width: 85vw;
+    }
+
+    .eventName {
+        font-size: calc(10px + 5vw);
+        font-weight: 500;
+    }
+    .eventDate {
+        font-size: calc(10px + 3vw);
+        font-weight: 400;
+    }
+}

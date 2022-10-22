@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./Home.css";
 import "./Gallery.css";
+import "./Events.css";
 import "./Contact.css";
 import "./About.css";
 import "./font.css";
@@ -21,6 +22,7 @@ export default function App() {
                 <Header />
                 <Routes>
                     <Route index element={<Home />} />
+                    <Route path="events" element={<Gallery category={"events"} />} />
                     <Route path="portraits" element={<Gallery category={"portraits"} />} />
                     <Route path="street" element={<Gallery category={"street"} />} />
                     <Route path="contact" element={<Contact />} />

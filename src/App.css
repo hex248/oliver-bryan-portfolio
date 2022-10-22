@@ -7,9 +7,11 @@
 :root {
     --background: #040404;
     --second-background: #000000;
-    --foreground: #eeeeee;
+    --foreground: #f1f1f1;
     --second-foreground: #ffffff;
     --mid: #808080;
+    --accent: #a272da;
+    --accent-background: #e8d1ff;
     /* --primary-font: "Cardo", serif; */
     /* --primary-font: "Rubik", sans-serif; */
     /* --primary-font: "Poppins", sans-serif; */
@@ -63,7 +65,7 @@ body {
 
 @media screen and (max-width: 700px) {
     #lightDarkToggle {
-        margin: 5px;
+        margin: 3px;
     }
     #lightDarkToggle svg {
         width: 15px;
@@ -98,29 +100,33 @@ body {
     margin: 0;
 }
 
-.header .link {
+.link {
     font-size: calc(10px + 1vw);
     text-decoration: none;
     color: var(--second-foreground);
+    /* color: var(--accent); */
     font-weight: 500;
     margin: 0;
     /* font-style: italic; */
 }
 
-.header .link:hover {
+.link:hover {
     /* color: var(--mid); */
     /* font-weight: 600; */
     text-decoration: underline;
 }
 
+.links {
+    display: flex;
+    gap: 50px;
+}
+
 #pageTitle {
     text-decoration: none;
     font-size: 5vw;
-    color: var(--second-foreground);
-    font-weight: 400;
+    color: var(--accent);
+    font-weight: 800;
     margin: 0;
-    /* margin-right: 40vw; */
-    flex-basis: 75%;
     text-align: left;
 }
 
@@ -137,8 +143,7 @@ body {
     }
 
     #pageTitle {
-        font-size: calc(20px + 7.5vw);
-        font-weight: 600;
+        font-size: calc(20px + 6.5vw);
         flex-basis: 100%;
         text-align: center;
     }
@@ -152,9 +157,6 @@ body {
         /* font-weight: 600; */
         text-decoration: none;
     }
-}
-
-@media screen and (max-width: 700px) {
 }
 
 .embeddedLink {
@@ -182,7 +184,6 @@ body {
 
 h1 {
     padding: 0px;
-    font-weight: 900;
     margin: 0;
 }
 
@@ -205,7 +206,7 @@ h1 {
 }
 
 *::-webkit-scrollbar-track {
-    background: var(--second-background);
+    background: none;
     -moz-transition: background-color 0.5s ease-in;
     -o-transition: background-color 0.5s ease-in;
     -webkit-transition: background-color 0.5s ease-in;

@@ -11,9 +11,12 @@ const Header = () => {
             </MediaQuery>
 
             <div className="header colour-transition">
-                <MediaQuery minWidth={701}>
-                    <Link to="/" id="pageTitle">
-                        Oliver Bryan
+                <Link to="/" id="pageTitle" className="link">
+                    OLIVER BRYAN
+                </Link>
+                <div className="links">
+                    <Link to="/events" className="link">
+                        Events
                     </Link>
                     <Link to="/portraits" className="link">
                         Portraits
@@ -21,30 +24,10 @@ const Header = () => {
                     <Link to="/street" className="link">
                         Street
                     </Link>
-                    {/* <Link to="/contact" className="link">
-                        Contact
-                    </Link> */}
                     <Link to="/about" className="link">
                         About
                     </Link>
-                </MediaQuery>
-                <MediaQuery maxWidth={700}>
-                    <Link to="/" id="pageTitle" className="link">
-                        Oliver Bryan
-                    </Link>
-                    <Link to="/portraits" className="link">
-                        Portraits
-                    </Link>
-                    <Link to="/street" className="link">
-                        Street
-                    </Link>
-                    {/* <Link to="/contact" className="link">
-                        Contact
-                    </Link> */}
-                    <Link to="/about" className="link">
-                        About
-                    </Link>
-                </MediaQuery>
+                </div>
             </div>
         </>
     );

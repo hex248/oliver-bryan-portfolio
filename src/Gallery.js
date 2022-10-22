@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MediaQuery from "react-responsive";
 
+import events from "./photos/events.json";
 import portraits from "./photos/portraits.json";
 import street from "./photos/street.json";
 
@@ -13,12 +14,11 @@ import { useMediaQuery } from "react-responsive";
 const Gallery = ({ category }) => {
     const [photos, setPhotos] = useState([]);
 
-    const [portraitsPhotos, setportraitsPhotos] = useState([]);
+    const [eventsPhotos, setEventsPhotos] = useState([]);
+    const [portraitsPhotos, setPortraitPhotos] = useState([]);
     const [streetPhotos, setStreetPhotos] = useState([]);
     useEffect(() => {
         if (photos.length < 1) {
-            console.log(category);
-            console.log(portraits);
             let seed = Math.random();
             if (localStorage.getItem("seed") && Date.now() - localStorage.getItem("seedCreationTime") <= 60000) {
                 seed = localStorage.getItem("seed");
@@ -26,11 +26,16 @@ const Gallery = ({ category }) => {
                 localStorage.setItem("seed", seed);
                 localStorage.setItem("seedCreationTime", Date.now());
             }
+            let eventsArr = shuffle(events, seed);
+            setEventsPhotos(eventsArr);
             let portraitsArr = shuffle(portraits, seed);
-            setportraitsPhotos(portraitsArr);
+            setPortraitPhotos(portraitsArr);
             let streetArr = shuffle(street, seed);
             setStreetPhotos(streetArr);
             switch (category) {
+                case "events":
+                    setPhotos(eventsArr);
+                    break;
                 case "portraits":
                     setPhotos(portraitsArr);
                     break;
@@ -45,12 +50,14 @@ const Gallery = ({ category }) => {
     }, [photos.length, category]);
 
     useEffect(() => {
-        if (category === "portraits" && streetPhotos.includes(photos[0])) {
+        if (category === "events" && (streetPhotos.includes(photos[0]) || portraitsPhotos.includes(photos[0]))) {
+            setPhotos(eventsPhotos);
+        } else if (category === "portraits" && (eventsPhotos.includes(photos[0]) || streetPhotos.includes(photos[0]))) {
             setPhotos(portraitsPhotos);
-        } else if (category === "street" && portraitsPhotos.includes(photos[0])) {
+        } else if (category === "street" && (portraitsPhotos.includes(photos[0]) || eventsPhotos.includes(photos[0]))) {
             setPhotos(streetPhotos);
         }
-    }, [category, portraitsPhotos, streetPhotos, photos]);
+    }, [category, eventsPhotos, portraitsPhotos, streetPhotos, photos]);
 
     const columnCount = useMediaQuery({ query: "(max-width: 701px)" }) ? 2 : 3; // mobile -> 2 columns, otherwise 3
 
@@ -203,6 +210,28 @@ const Gallery = ({ category }) => {
         }
     };
 
+    const EventsDisplay = () => {
+        return (
+            <div className="eventsList">
+                {events.map((e) => (
+                    <EventScroll event={e} />
+                ))}
+            </div>
+        );
+    };
+
+    const EventScroll = ({ event }) => {
+        return (
+            <div className="event">
+                <div className="images"></div>
+                <div className="info">
+                    <h1 className="eventName">{event.name}</h1>
+                    <h1 className="eventDate">{event.date}</h1>
+                </div>
+            </div>
+        );
+    };
+
     return (
         <>
             <MediaQuery minWidth={701}>
@@ -213,8 +242,7 @@ const Gallery = ({ category }) => {
                     <h1 id="galleryCategoryTitle" className="colour-transition">
                         {capitalise(category)}
                     </h1>
-                    <div className="flexBreak" />
-                    <Grid />
+                    {["portraits", "street"].includes(category) ? <Grid /> : <EventsDisplay />}
                 </div>
                 <div className="back-to-top-wrapper">
                     <a href="#top" className="back-to-top-link colour-transition-0-1s" aria-label="Scroll to Top">
