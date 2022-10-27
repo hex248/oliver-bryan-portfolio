@@ -1,22 +1,65 @@
-#homeBackground {
-    width: 100%;
-}
+@media screen and (min-width: 701px) {
+    #homeBGContainer {
+        width: 100%;
+        max-height: 84.75vh;
+        height: 84.75vh;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
 
+    #homeBackground {
+        min-width: 1920px;
+        max-width: 100%;
+        min-height: 1080px;
+    }
+}
 #homeMain {
     padding-bottom: 0;
 }
 
 #homeOverlay {
     position: absolute;
-    left: 5vw;
-    top: 40vh;
+    /* left: 5vw; */
+    top: 25vh;
     text-align: center;
-    background-color: #1b1b1b75;
-    padding: 25px;
-    border-radius: 7.5px;
+    padding: 15px;
+    border-radius: 5px;
 }
 
 .overlayText {
-    font-size: calc(15px + 2vw);
+    font-size: 3.5vw;
     color: #ffffff;
+}
+
+@media screen and (max-width: 700px) {
+    #homeBGContainer {
+        max-height: 82.75vh;
+        height: 82.75vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        align-content: center;
+    }
+
+    #homeBackground {
+        width: 100%;
+
+        /* min-width: 703px; */
+        /* min-height: 1523px; */
+    }
+
+    #homeOverlay {
+        top: 20vh;
+        left: 5%;
+        background-color: #1b1b1ba6;
+        /* padding: 10px; */
+    }
+
+    .overlayText {
+        font-size: 6.5vw;
+    }
 }

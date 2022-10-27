@@ -87,7 +87,9 @@ body {
     padding: 0 1vw 0.15vw 1vw;
     background-color: var(--second-background);
     color: var(--second-foreground);
-    min-height: 15vh;
+    /* min-height: 15vh; */
+    height: 15vh;
+    max-height: 15vh;
     column-gap: 30px;
     margin: 0;
     /* border-bottom: 2px solid var(--second-foreground); */
@@ -136,20 +138,23 @@ body {
         justify-content: space-around;
         padding-top: 10px;
         padding-bottom: 10px;
-    }
-
-    .header .link {
-        font-size: calc(2px + 2vw);
+        height: 15vh;
+        max-height: 15vh;
     }
 
     #pageTitle {
-        font-size: calc(20px + 6.5vw);
+        font-size: 11vw;
         flex-basis: 100%;
         text-align: center;
     }
 
+    .links {
+        display: flex;
+        gap: 10vw;
+    }
+
     .header .link {
-        font-size: calc(10px + 2vw);
+        font-size: 4vw;
     }
 
     .header .link:hover {
