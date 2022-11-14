@@ -41,6 +41,7 @@ body {
 #lightDarkToggle {
     position: absolute;
     margin: 1vh 0.5vw;
+    z-index: 1;
 }
 
 #lightDarkToggle svg {
