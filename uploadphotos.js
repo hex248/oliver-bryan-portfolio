@@ -8,9 +8,18 @@ const go = async () => {
     let directories = fs.readdirSync("./uploadqueue");
     for (let dir of directories) {
         if (fs.readdirSync(`./uploadqueue/${dir}`).length > 0) {
-            for (let file of fs.readdirSync(`./uploadqueue/${dir}`)) {
-                if (fs.readdirSync(`./uploadqueue/${dir}`).includes(file))
-                    await fs.rename(`./uploadqueue/${dir}/${file}`, `./uploadqueue/${dir}/${v4()}.jpg`, (err) => (err ? console.error(err) : null));
+            if (dir === "events") {
+                for (let event of fs.readdirSync(`./uploadqueue/${dir}`)) {
+                    let uploadDir = `./uploadqueue/${dir}/${event}`;
+                    for (let file of fs.readdirSync(uploadDir)) {
+                        if (fs.readdirSync(uploadDir).includes(file)) await fs.rename(`${uploadDir}/${file}`, `${uploadDir}/${v4()}.jpg`, (err) => (err ? console.error(err) : null));
+                    }
+                }
+            } else {
+                for (let file of fs.readdirSync(`./uploadqueue/${dir}`)) {
+                    if (fs.readdirSync(`./uploadqueue/${dir}`).includes(file))
+                        await fs.rename(`./uploadqueue/${dir}/${file}`, `./uploadqueue/${dir}/${v4()}.jpg`, (err) => (err ? console.error(err) : null));
+                }
             }
         }
     }
@@ -18,41 +27,59 @@ const go = async () => {
     // apply compression and save to web-size
     for (let dir of directories) {
         if (fs.readdirSync(`./uploadqueue/${dir}`).length > 0) {
-            // copy to full-size directory
-            await fse.copySync(`./uploadqueue/${dir}`, `./public/photos/${dir}/full-size`, (err) => (err ? console.error : null));
-            console.log(dir);
+            if (dir === "events") {
+                for (let event of fs.readdirSync(`./uploadqueue/${dir}`)) {
+                    let uploadDir = `./uploadqueue/${dir}/${event}`;
+                    // copy to full-size directory
+                    let fullSizeDestination = `./public/photos/${dir}/${event}/full-size`;
+                    let webSizeDestination = `./public/photos/${dir}/${event}/web-size`;
+                    console.log(fullSizeDestination);
+                    console.log(webSizeDestination);
+                    await fse.copySync(uploadDir, fullSizeDestination, (err) => (err ? console.error : null));
 
-            for (let file of fs.readdirSync(`./public/photos/${dir}/full-size`)) {
-                let image = await sharp(`./public/photos/${dir}/full-size/${file}`);
-                let resized = await image.resize({ width: 1500 });
-                await resized.toFile(`./public/photos/${dir}/web-size/${file}`);
+                    for (let file of fs.readdirSync(fullSizeDestination)) {
+                        let image = await sharp(`${fullSizeDestination}/${file}`);
+                        let resized = await image.resize({ width: 1500 });
+                        if (!fs.existsSync(webSizeDestination)) fs.mkdirSync(webSizeDestination);
+                        await resized.toFile(`${webSizeDestination}/${file}`);
+                    }
+                }
+            } else {
+                // copy to full-size directory
+                await fse.copySync(`./uploadqueue/${dir}`, `./public/photos/${dir}/full-size`, (err) => (err ? console.error : null));
+                console.log(dir);
+
+                for (let file of fs.readdirSync(`./public/photos/${dir}/full-size`)) {
+                    let image = await sharp(`./public/photos/${dir}/full-size/${file}`);
+                    let resized = await image.resize({ width: 1500 });
+                    await resized.toFile(`./public/photos/${dir}/web-size/${file}`);
+                }
             }
         }
     }
 
     // write to json indexes
     updateJSON();
-    // git commit changes to web-size and json indexes
-    // const git = simpleGit();
-
-    // for (let dir of directories) {
-    //     git.add([`./public/photos/${dir}/web-size/`, `./src/photos/${dir}.json`]);
-    // }
-
-    // git.commit("Updated Photos via uploadphotos.js");
-
-    // // git push
-
-    // git.push();
-
-    // clear uploadqueue
     fse.emptyDirSync("./uploadqueue/events");
     fse.emptyDirSync("./uploadqueue/portraits");
     fse.emptyDirSync("./uploadqueue/street");
 };
 
 const updateJSON = () => {
-    fs.writeFileSync("./src/photos/events.json", JSON.stringify(fs.readdirSync("./public/photos/events/web-size").filter((f) => f.endsWith(".jpg"))));
+    let events = JSON.parse(fs.readFileSync("./src/photos/events.json"));
+    for (let event of fs.readdirSync("./public/photos/events")) {
+        let eventIDX = events.findIndex((e) => e.name === event);
+        if (eventIDX > -1) {
+            // if the event has already been recorded
+            for (let img of fs.readdirSync(`./public/photos/events/${event}/full-size`)) {
+                events[eventIDX].photos.push(img);
+            }
+        } else {
+            events.push({ name: event, date: "", photos: fs.readdirSync(`./public/photos/events/${event}/full-size`) });
+        }
+    }
+
+    fs.writeFileSync("./src/photos/events.json", JSON.stringify(events, null, 4));
     fs.writeFileSync("./src/photos/portraits.json", JSON.stringify(fs.readdirSync("./public/photos/portraits/web-size").filter((f) => f.endsWith(".jpg"))));
     fs.writeFileSync("./src/photos/street.json", JSON.stringify(fs.readdirSync("./public/photos/street/web-size").filter((f) => f.endsWith(".jpg"))));
 };
