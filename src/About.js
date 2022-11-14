@@ -13,7 +13,7 @@ const About = () => {
                 <h1 id="aboutDescription">
                     Portrait and street photographer
                     <br />
-                    17 years old
+                    18 years old
                     <br />
                     Based in London
                     <br />
