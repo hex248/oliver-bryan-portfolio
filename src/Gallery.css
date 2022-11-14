@@ -32,7 +32,7 @@
 }
 
 .scrollableElement {
-    pointer-events: none;
+    /* pointer-events: none; */
     padding: 0 0;
     position: relative;
     max-width: 112rem;
@@ -74,5 +74,4 @@
     right: 1vw;
     bottom: 0;
     width: 3em;
-    pointer-events: none;
 }

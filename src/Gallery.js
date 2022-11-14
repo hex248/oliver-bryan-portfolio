@@ -17,6 +17,9 @@ const Gallery = ({ category }) => {
     const [eventsPhotos, setEventsPhotos] = useState([]);
     const [portraitsPhotos, setPortraitPhotos] = useState([]);
     const [streetPhotos, setStreetPhotos] = useState([]);
+
+    const [eventPreviewIDX, setEventPreviewIDX] = useState([]);
+
     useEffect(() => {
         if (photos.length < 1) {
             let seed = Math.random();
@@ -26,6 +29,7 @@ const Gallery = ({ category }) => {
                 localStorage.setItem("seed", seed);
                 localStorage.setItem("seedCreationTime", Date.now());
             }
+
             let eventsArr = shuffle(events, seed);
             setEventsPhotos(eventsArr);
             let portraitsArr = shuffle(portraits, seed);
@@ -46,6 +50,14 @@ const Gallery = ({ category }) => {
                     setPhotos([]);
                     break;
             }
+
+            let maxLength = 0;
+
+            for (let event of eventsArr) {
+                if (maxLength === 0 || event.photos.length < maxLength) maxLength = event.photos.length;
+            }
+
+            setEventPreviewIDX(Math.floor(Math.random() * maxLength));
         }
     }, [photos.length, category]);
 
@@ -214,21 +226,25 @@ const Gallery = ({ category }) => {
         return (
             <div className="eventsList">
                 {events.map((e) => (
-                    <EventScroll event={e} />
+                    <Event event={e} />
                 ))}
             </div>
         );
     };
 
-    const EventScroll = ({ event }) => {
+    const Event = ({ event }) => {
         return (
-            <div className="event">
-                <div className="images"></div>
-                <div className="info">
-                    <h1 className="eventName">{event.name}</h1>
-                    <h1 className="eventDate">{event.date}</h1>
-                </div>
-            </div>
+            <>
+                <a className="event noselect" href={`/event/${event.name.replaceAll(" ", "+")}`}>
+                    <div className="imageContainer">
+                        <img src={`/photos/events/${event.name}/web-size/${event.photos[eventPreviewIDX]}`} alt=""></img>
+                    </div>
+                    <div className="info">
+                        <h1 className="eventName">{event.name}</h1>
+                        <h1 className="eventDate">{event.date}</h1>
+                    </div>
+                </a>
+            </>
         );
     };
 
