@@ -79,6 +79,21 @@ const updateJSON = () => {
         }
     }
 
+    const DateMaker = (dateStr) => {
+        let arr = dateStr.split("/");
+
+        let ms = Date.parse(`${arr[1]}/${arr[0]}/${arr[2]}`); // convert UK to US format
+
+        return ms;
+    };
+
+    events = events.sort((a, b) => {
+        if (DateMaker(a.date) >= DateMaker(b.date)) {
+            return -1;
+        }
+        return 1;
+    });
+
     fs.writeFileSync("./src/photos/events.json", JSON.stringify(events, null, 4));
     fs.writeFileSync("./src/photos/portraits.json", JSON.stringify(fs.readdirSync("./public/photos/portraits/web-size").filter((f) => f.endsWith(".jpg"))));
     fs.writeFileSync("./src/photos/street.json", JSON.stringify(fs.readdirSync("./public/photos/street/web-size").filter((f) => f.endsWith(".jpg"))));
