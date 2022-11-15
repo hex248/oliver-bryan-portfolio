@@ -1,7 +1,7 @@
 #galleryCategoryTitle {
     font-weight: 400;
     font-size: 3.5vw;
-    padding: 50px;
+    padding: 25px 50px 25px 50px;
     /* border: 1px solid var(--foreground);
     border-radius: 10px; */
 }
@@ -35,7 +35,7 @@
     /* pointer-events: none; */
     padding: 0 0;
     position: relative;
-    max-width: 112rem;
+    max-width: 100%;
     margin: 0rem auto;
     background-color: none;
     color: none;
@@ -45,7 +45,7 @@
     position: fixed;
     position: sticky;
     pointer-events: all;
-    top: calc(100vh - 3.5rem);
+    top: calc(100vh - 5rem);
     display: flex;
     align-items: center;
     justify-content: center;

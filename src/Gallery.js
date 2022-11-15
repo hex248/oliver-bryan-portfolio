@@ -18,7 +18,9 @@ const Gallery = ({ category }) => {
     const [portraitsPhotos, setPortraitPhotos] = useState([]);
     const [streetPhotos, setStreetPhotos] = useState([]);
 
-    const [eventPreviewIDX, setEventPreviewIDX] = useState([]);
+    const [eventPreviewIDX, setEventPreviewIDX] = useState(0);
+
+    const [pageTitle, setPageTitle] = useState("");
 
     useEffect(() => {
         if (photos.length < 1) {
@@ -30,21 +32,28 @@ const Gallery = ({ category }) => {
                 localStorage.setItem("seedCreationTime", Date.now());
             }
 
-            let eventsArr = shuffle(events, seed);
-            setEventsPhotos(eventsArr);
             let portraitsArr = shuffle(portraits, seed);
             setPortraitPhotos(portraitsArr);
             let streetArr = shuffle(street, seed);
             setStreetPhotos(streetArr);
             switch (category) {
                 case "events":
-                    setPhotos(eventsArr);
+                    setPageTitle("Events");
+                    break;
+                case "event":
+                    let eventName = window.location.pathname.replace("/event/", "").replaceAll("+", " ");
+                    let eventPhotos = events.find((e) => e.name === eventName).photos;
+                    setEventsPhotos(eventPhotos);
+                    setPhotos(shuffle(eventPhotos, seed));
+                    setPageTitle(eventName);
                     break;
                 case "portraits":
                     setPhotos(portraitsArr);
+                    setPageTitle("Portraits");
                     break;
                 case "street":
                     setPhotos(streetArr);
+                    setPageTitle("Street");
                     break;
                 default:
                     setPhotos([]);
@@ -53,7 +62,7 @@ const Gallery = ({ category }) => {
 
             let maxLength = 0;
 
-            for (let event of eventsArr) {
+            for (let event of events) {
                 if (maxLength === 0 || event.photos.length < maxLength) maxLength = event.photos.length;
             }
 
@@ -64,10 +73,15 @@ const Gallery = ({ category }) => {
     useEffect(() => {
         if (category === "events" && (streetPhotos.includes(photos[0]) || portraitsPhotos.includes(photos[0]))) {
             setPhotos(eventsPhotos);
+            setPageTitle("Events");
         } else if (category === "portraits" && (eventsPhotos.includes(photos[0]) || streetPhotos.includes(photos[0]))) {
             setPhotos(portraitsPhotos);
+            setPageTitle("Portraits");
         } else if (category === "street" && (portraitsPhotos.includes(photos[0]) || eventsPhotos.includes(photos[0]))) {
             setPhotos(streetPhotos);
+            setPageTitle("Street");
+        } else if (category === "event") {
+            setPageTitle(window.location.pathname.replace("/event/", "").replaceAll("+", " "));
         }
     }, [category, eventsPhotos, portraitsPhotos, streetPhotos, photos]);
 
@@ -81,7 +95,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(0, Math.floor(photos.length / 5)).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -89,7 +103,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 5), Math.floor(photos.length / 5) * 2).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -97,7 +111,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 5) * 2, Math.floor(photos.length / 5) * 3).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -105,7 +119,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 5) * 3, Math.floor(photos.length / 5) * 4).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -113,7 +127,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 5) * 4, photos.length).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -126,7 +140,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(0, Math.floor(photos.length / 4)).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -134,7 +148,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 4), Math.floor(photos.length / 4) * 2).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -142,7 +156,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 4) * 2, Math.floor(photos.length / 4) * 3).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -150,7 +164,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 4) * 3, photos.length).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -163,7 +177,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(0, Math.floor(photos.length / 3)).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -171,7 +185,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 3), Math.floor(photos.length / 3) * 2).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -179,7 +193,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 3) * 2, photos.length).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -192,7 +206,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(0, Math.floor(photos.length / 2)).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -200,7 +214,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.slice(Math.floor(photos.length / 2), photos.length).map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -213,7 +227,7 @@ const Gallery = ({ category }) => {
                         {photos
                             ? photos.map((p) => {
                                   console.log(p);
-                                  return <img src={`/photos/${category}/web-size/${p}`} alt={p} key={p} />;
+                                  return <img src={category === "event" ? `/photos/events/${pageTitle}/web-size/${p}` : `/photos/${category}/web-size/${p}`} alt={p} key={p} />;
                               })
                             : ""}
                     </div>
@@ -256,15 +270,17 @@ const Gallery = ({ category }) => {
             <div className="scrollableElement colour-transition">
                 <div className="main colour-transition">
                     <h1 id="galleryCategoryTitle" className="colour-transition">
-                        {capitalise(category)}
+                        {category === "event" ? window.location.pathname.replace("/event/", "").replaceAll("+", " ") : capitalise(category)}
                     </h1>
-                    {["portraits", "street"].includes(category) ? <Grid /> : <EventsDisplay />}
+                    {["portraits", "street", "event"].includes(category) ? <Grid /> : <EventsDisplay />}
                 </div>
-                <div className="back-to-top-wrapper">
-                    <a href="#top" className="back-to-top-link colour-transition-0-1s" aria-label="Scroll to Top">
-                        <ArrowUpIcon className="colour-transition-0-1s" size={32} />
-                    </a>
-                </div>
+                {category === "events" ? null : (
+                    <div className="back-to-top-wrapper">
+                        <a href="#top" className="back-to-top-link colour-transition-0-1s" aria-label="Scroll to Top">
+                            <ArrowUpIcon className="colour-transition-0-1s" size={32} />
+                        </a>
+                    </div>
+                )}
             </div>
         </>
     );

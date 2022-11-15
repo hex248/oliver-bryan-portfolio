@@ -71,9 +71,7 @@ const updateJSON = () => {
         let eventIDX = events.findIndex((e) => e.name === event);
         if (eventIDX > -1) {
             // if the event has already been recorded
-            for (let img of fs.readdirSync(`./public/photos/events/${event}/full-size`)) {
-                events[eventIDX].photos.push(img);
-            }
+            events[eventIDX].photos = fs.readdirSync(`./public/photos/events/${event}/full-size`);
         } else {
             events.push({ name: event, date: "", photos: fs.readdirSync(`./public/photos/events/${event}/full-size`) });
         }
