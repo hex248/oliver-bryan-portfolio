@@ -26,29 +26,28 @@ const LightDark = () => {
         localStorage.setItem("colourMode", "light");
         document.documentElement.style.setProperty("--background", "#f3f3f3");
         document.documentElement.style.setProperty("--second-background", "#ffffff");
-        document.documentElement.style.setProperty("--foreground", "#040404");
+        document.documentElement.style.setProperty("--foreground", "#000000");
         document.documentElement.style.setProperty("--second-foreground", "#000000");
         setLDIcon("moon");
     };
 
     const SetDarkMode = () => {
         localStorage.setItem("colourMode", "dark");
-        document.documentElement.style.setProperty("--background", "#040404");
+        document.documentElement.style.setProperty("--background", "#000000");
         document.documentElement.style.setProperty("--second-background", "#000000");
         document.documentElement.style.setProperty("--foreground", "#f3f3f3");
         document.documentElement.style.setProperty("--second-foreground", "#ffffff");
         setLDIcon("sun");
     };
 
-    // return (
-    //     <div id="lightDarkToggle" className="colour-transition" onClick={ToggleDarkMode}>
-    //         {ldIcon === "sun" ? <SunIcon /> : <MoonIcon />}
-    //     </div>
-    // );
     return (
-        <div id="lightDarkToggle" className="colour-transition" onClick={ToggleDarkMode}>
-            {ldIcon === "sun" ? <SunIcon /> : <MoonIcon />}
-        </div>
+        <>
+            {1 < 0 ? (
+                <div id="lightDarkToggle" className="colour-transition" onClick={ToggleDarkMode}>
+                    {ldIcon === "sun" ? <SunIcon /> : <MoonIcon />}
+                </div>
+            ) : null}
+        </>
     );
 };
 
