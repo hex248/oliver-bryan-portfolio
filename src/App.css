@@ -165,9 +165,11 @@ body {
     padding: 2.5px;
 }
 
-.embeddedLink:hover {
-    color: var(--background);
-    background-color: var(--second-foreground);
+@media screen and (min-width: 701px) {
+    .embeddedLink:hover {
+        color: var(--background);
+        background-color: var(--second-foreground);
+    }
 }
 
 .main {

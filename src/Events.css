@@ -54,9 +54,6 @@
     -webkit-transition: background-color 0.2s ease-out;
     transition: background-color 0.2s ease-out;
 }
-.event .info:hover {
-    background-color: #00000000;
-}
 
 .eventName {
     font-size: calc(15px + 1vw);
@@ -66,6 +63,7 @@
     padding-right: 10px;
     text-shadow: #000000 1px 1px 10px;
 }
+
 .eventDate {
     font-size: calc(10px + 1vw);
     font-weight: 200;
@@ -75,16 +73,34 @@
     text-shadow: #000000 1px 1px 20px;
 }
 
+#eventTitle {
+    font-weight: 400;
+    font-size: 3.5vw;
+    padding: 25px 10px 25px 10px;
+    text-align: center;
+}
+
+@media screen and (min-width: 701px) {
+    /* desktop */
+
+    .event .info:hover {
+        background-color: #00000000;
+    }
+}
+
 @media screen and (max-width: 700px) {
+    /* mobile */
+
+    .eventsList {
+        padding-bottom: 30px;
+    }
+
     .event {
         width: 85vw;
+        height: 50vh;
     }
 
     .event .info {
-        background-color: #00000050;
-    }
-
-    .event .info:hover {
         background-color: #00000050;
     }
 
@@ -95,5 +111,9 @@
     .eventDate {
         font-size: calc(10px + 3vw);
         font-weight: 400;
+    }
+
+    #eventTitle {
+        font-size: 8.5vw;
     }
 }

@@ -269,7 +269,7 @@ const Gallery = ({ category }) => {
             </MediaQuery>
             <div className="scrollableElement colour-transition">
                 <div className="main colour-transition">
-                    <h1 id="galleryCategoryTitle" className="colour-transition">
+                    <h1 id={category === "event" ? "eventTitle" : "galleryCategoryTitle"} className="colour-transition">
                         {category === "event" ? window.location.pathname.replace("/event/", "").replaceAll("+", " ") : capitalise(category)}
                     </h1>
                     {["portraits", "street", "event"].includes(category) ? <Grid /> : <EventsDisplay />}
