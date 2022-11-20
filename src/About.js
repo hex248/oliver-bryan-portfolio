@@ -16,12 +16,12 @@ const About = () => {
                     18 years old
                     <br />
                     Based in London
-                    {/* <br />
                     <br />
-                    See more at: 
-                    <a href="https://home.oliverbryan.com" target="_blank" rel="noreferrer" className="embeddedLink">
-                        home.oliverbryan.com
-                    </a> */}
+                    <br />
+                    See more on{" "}
+                    <a href="https://instagram.com/oliverbryann" target="_blank" rel="noreferrer" className="embeddedLink">
+                        Instagram
+                    </a>
                 </h1>
             </div>
         </>
