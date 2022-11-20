@@ -3,6 +3,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { isBrowser, isMobile, useMobileOrientation } from "react-device-detect";
 
 import "./App.css";
+<<<<<<< HEAD
+=======
+import "./Home.css";
+import "./Gallery.css";
+import "./Events.css";
+import "./Contact.css";
+import "./About.css";
+>>>>>>> origin/rework
 import "./font.css";
 // import "./Colours.css";
 import Home from "./Home";
@@ -71,12 +79,20 @@ export default function App() {
             <BrowserRouter>
                 <Routes>
                     <Route index element={<Home />} />
+<<<<<<< HEAD
                     <Route path="work" element={<Work />} />
                     <Route path="videos" element={<Videos />} />
                     <Route path="work/people" element={<Gallery category="people" />} />
                     <Route path="work/people/full" element={<FullView category={"people"} />} />
                     <Route path="work/environment" element={<Gallery category="environment" />} />
                     <Route path="work/environment/full" element={<FullView category={"environment"} />} />
+=======
+                    <Route path="event/*" element={<Gallery category={"event"} />} />
+                    <Route path="events" element={<Gallery category={"events"} />} />
+                    <Route path="portraits" element={<Gallery category={"portraits"} />} />
+                    <Route path="street" element={<Gallery category={"street"} />} />
+                    <Route path="contact" element={<Contact />} />
+>>>>>>> origin/rework
                     <Route path="about" element={<About />} />
                     <Route path="*" element={<App />} />
                 </Routes>

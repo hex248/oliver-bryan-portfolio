@@ -1,0 +1,119 @@
+.eventsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    flex-basis: 100%;
+}
+
+.event {
+    background-color: var(--background);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    width: 22.5vw;
+    height: 34vw;
+    display: flex;
+    overflow: hidden;
+    /* padding: 10px; */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.event .imageContainer {
+    height: inherit;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-basis: 100%;
+}
+
+.event img {
+    width: 25vw;
+    flex-basis: 100%;
+    border-radius: 10px;
+}
+
+.event .info {
+    color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #000000bb;
+    width: inherit;
+    height: inherit;
+
+    -moz-transition: background-color 0.2s ease-out;
+    -o-transition: background-color 0.2s ease-out;
+    -webkit-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+}
+
+.eventName {
+    font-size: calc(15px + 1vw);
+    font-weight: 500;
+    flex-basis: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: #000000 1px 1px 10px;
+}
+
+.eventDate {
+    font-size: calc(10px + 1vw);
+    font-weight: 200;
+    flex-basis: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-shadow: #000000 1px 1px 20px;
+}
+
+#eventTitle {
+    font-weight: 400;
+    font-size: 3.5vw;
+    padding: 25px 10px 25px 10px;
+    text-align: center;
+}
+
+@media screen and (min-width: 701px) {
+    /* desktop */
+
+    .event .info:hover {
+        background-color: #00000000;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    /* mobile */
+
+    .eventsList {
+        padding-bottom: 30px;
+    }
+
+    .event {
+        width: 85vw;
+        height: 50vh;
+    }
+
+    .event .info {
+        background-color: #00000050;
+    }
+
+    .eventName {
+        font-size: calc(10px + 5vw);
+        font-weight: 500;
+    }
+    .eventDate {
+        font-size: calc(10px + 3vw);
+        font-weight: 400;
+    }
+
+    #eventTitle {
+        font-size: 8.5vw;
+    }
+}

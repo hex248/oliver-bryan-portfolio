@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 .Home {
     text-align: center;
     font-family: "ts_blockbold";
     background-color: var(--dark-colour);
     min-height: 100vh;
     color: var(--lighter-secondary-accent);
+=======
+#galleryCategoryTitle {
+    font-weight: 400;
+    font-size: 3.5vw;
+    padding: 25px 50px 25px 50px;
+>>>>>>> origin/rework
 }
 
 .Home-header {
@@ -36,6 +43,7 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
 #page-name {
     font-size: 4.5vw;
     color: var(--lighter-secondary-accent);
@@ -44,10 +52,37 @@
 #gallery-nav {
     font-size: 3vw;
     padding-bottom: 6vh;
+=======
+.scrollableElement {
+    /* pointer-events: none; */
+    padding: 0 0;
+    position: relative;
+    max-width: 100%;
+    margin: 0rem auto;
+    background-color: none;
+    color: none;
+}
+
+.back-to-top-link {
+    position: fixed;
+    position: sticky;
+    pointer-events: all;
+    top: calc(100vh - 5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--second-foreground);
+    border: 2px solid var(--second-foreground);
+>>>>>>> origin/rework
 }
 
 #left-nav {
     position: absolute;
+<<<<<<< HEAD
     left: 3vw;
     text-align: left;
 }
@@ -56,4 +91,10 @@
     position: absolute;
     right: 3vw;
     text-align: right;
+=======
+    top: 100vh;
+    right: 1vw;
+    bottom: 0;
+    width: 3em;
+>>>>>>> origin/rework
 }
