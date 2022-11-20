@@ -251,7 +251,7 @@ const Gallery = ({ category }) => {
             <>
                 <a className="event noselect" href={`/event/${event.name.replaceAll(" ", "+")}`}>
                     <div className="imageContainer">
-                        <img src={`/photos/events/${event.name}/web-size/${event.photos[eventPreviewIDX]}`} alt=""></img>
+                        <img src={`/photos/events/${event.name}/web-size/${shuffle(event.photos)[eventPreviewIDX]}`} alt=""></img>
                     </div>
                     <div className="info">
                         <h1 className="eventName">{event.name}</h1>
