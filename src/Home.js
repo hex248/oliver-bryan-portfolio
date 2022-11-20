@@ -1,27 +1,3 @@
-<<<<<<< HEAD
-// import "./App.css";
-import "./Home.css";
-import SocialIcons from "./SocialIcons.js";
-
-function Home() {
-    return (
-        <div className="Home">
-            <header className="Home-header">
-                <h1 className="noselect">oliver bryan</h1>
-                <a href="/work" className="Page-link noselect">
-                    Work
-                </a>
-                <a href="/videos" className="Page-link noselect">
-                    Videos
-                </a>
-                <a href="/about" className="Page-link noselect">
-                    About
-                </a>
-            </header>
-
-            <SocialIcons />
-        </div>
-=======
 import React, { useState, useEffect } from "react";
 import MediaQuery from "react-responsive";
 import LightDark from "./LightDark";
@@ -67,8 +43,7 @@ const Home = () => {
                 </div>
             </div>
         </>
->>>>>>> origin/rework
     );
-}
+};
 
 export default Home;

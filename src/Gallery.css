@@ -1,58 +1,34 @@
-<<<<<<< HEAD
-.Home {
-    text-align: center;
-    font-family: "ts_blockbold";
-    background-color: var(--dark-colour);
-    min-height: 100vh;
-    color: var(--lighter-secondary-accent);
-=======
 #galleryCategoryTitle {
     font-weight: 400;
     font-size: 3.5vw;
     padding: 25px 50px 25px 50px;
->>>>>>> origin/rework
 }
 
-.Home-header {
-    background-color: var(--dark-colour);
-    min-height: 10vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(20px + 2vmin);
-    color: var(--lighter-secondary-accent);
+@media screen and (max-width: 700px) {
+    #galleryCategoryTitle {
+        font-size: 15vw;
+    }
 }
 
 .gridRow {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 4px;
     justify-content: center;
+    flex-basis: 95%;
+    max-width: 1920px;
 }
 
 .gridColumn {
-    flex: 30%;
-    max-width: 500px;
+    flex: 10%;
     padding: 0 4px;
 }
 
 .gridColumn img {
-    margin-top: 8px;
+    margin-bottom: 8px;
     vertical-align: middle;
     width: 100%;
 }
 
-<<<<<<< HEAD
-#page-name {
-    font-size: 4.5vw;
-    color: var(--lighter-secondary-accent);
-}
-
-#gallery-nav {
-    font-size: 3vw;
-    padding-bottom: 6vh;
-=======
 .scrollableElement {
     /* pointer-events: none; */
     padding: 0 0;
@@ -77,24 +53,23 @@
     border-radius: 50%;
     background-color: var(--second-foreground);
     border: 2px solid var(--second-foreground);
->>>>>>> origin/rework
 }
 
-#left-nav {
-    position: absolute;
-<<<<<<< HEAD
-    left: 3vw;
-    text-align: left;
+.back-to-top-link svg {
+    color: var(--second-background);
 }
 
-#right-nav {
+.back-to-top-link:hover {
+    background-color: var(--second-background);
+}
+.back-to-top-link:hover svg {
+    color: var(--second-foreground);
+}
+
+.back-to-top-wrapper {
     position: absolute;
-    right: 3vw;
-    text-align: right;
-=======
     top: 100vh;
     right: 1vw;
     bottom: 0;
     width: 3em;
->>>>>>> origin/rework
 }

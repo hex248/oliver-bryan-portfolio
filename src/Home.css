@@ -1,39 +1,3 @@
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
-
-.Home {
-    text-align: center;
-    font-family: "ts_blockbold";
-    background-color: var(--dark-colour);
-    min-height: 100vh;
-    color: var(--lighter-secondary-accent);
-}
-
-.Home-header {
-    background-color: var(--dark-colour);
-    min-height: 10vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(20px + 2vmin);
-}
-
-.Home-header h1 {
-    color: var(--lightest-secondary-accent);
-}
-
-.Page-link {
-    color: var(--primary-accent);
-    text-decoration: none;
-    font-size: calc(40px + 5vmin);
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.Page-link:hover {
-    color: var(--secondary-accent);
-=======
 @media screen and (min-width: 701px) {
     #homeBGContainer {
         width: 100%;
@@ -66,7 +30,6 @@
 .overlayText {
     font-size: 3.5vw;
     color: #ffffff;
->>>>>>> origin/rework
 }
 
 @media screen and (max-width: 700px) {
