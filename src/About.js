@@ -18,7 +18,6 @@ const About = () => {
                     Based in London
                     <br />
                     <br />
-                    See more on{" "}
                     <a href="https://instagram.com/oliverbryann" target="_blank" rel="noreferrer" className="embeddedLink">
                         Instagram
                     </a>
