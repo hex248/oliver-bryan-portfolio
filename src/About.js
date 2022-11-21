@@ -11,8 +11,6 @@ const About = () => {
             <div className="main colour-transition" id="aboutMain">
                 <h1 id="aboutTitle">About</h1>
                 <h1 id="aboutDescription">
-                    Portrait and street photographer
-                    <br />
                     18 years old
                     <br />
                     Based in London
