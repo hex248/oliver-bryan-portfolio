@@ -30,3 +30,4 @@ yarn-error.log*
 log
 public/photos/me/HomeMobile.psd
 public/photos/me/Home.psd
+.vercel
