@@ -6,12 +6,15 @@
 
 :root {
     --background: #000000; /* #040404 */
-    --second-background: #000000;
+    --second-background: #020202;
+    --third-background: #111111;
     --foreground: #f1f1f1;
     --second-foreground: #ffffff;
     --mid: #808080;
-    --accent: #a272da;
-    --accent-background: #e8d1ff;
+    /* --accent: #ae7de6; */
+    /* --accent-background: #e8d1ff; */
+    --accent: #bb264b;
+    --accent-background: #ffd1dc;
     --primary-font: "Montserrat", sans-serif;
 }
 
@@ -106,6 +109,7 @@ body {
 }
 
 .link:hover {
+    color: var(--accent);
     text-decoration: underline;
 }
 
@@ -148,27 +152,19 @@ body {
     .header .link {
         font-size: 4vw;
     }
-
-    .header .link:hover {
-        /* color: var(--mid); */
-        /* font-weight: 600; */
-        text-decoration: none;
-    }
 }
 
 .embeddedLink {
-    text-decoration: underline;
-    font-weight: 600;
+    text-decoration: none;
+    font-weight: 500;
     color: var(--second-foreground);
     border-radius: 5px;
-    background-color: none;
-    padding: 2.5px;
 }
 
 @media screen and (min-width: 701px) {
     .embeddedLink:hover {
-        color: var(--background);
-        background-color: var(--second-foreground);
+        text-decoration: underline;
+        color: var(--accent);
     }
 }
 
