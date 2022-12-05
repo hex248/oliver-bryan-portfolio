@@ -253,6 +253,7 @@ const Gallery = ({ category }) => {
                     <div className="imageContainer">
                         <img src={`/photos/events/${event.name}/web-size/${shuffle(event.photos)[eventPreviewIDX]}`} alt=""></img>
                     </div>
+                    <div className="imageCover"></div>
                     <div className="info">
                         <h1 className="eventName">{event.name}</h1>
                         <h1 className="eventDate">{event.date}</h1>
