@@ -158,13 +158,16 @@ body {
     text-decoration: none;
     font-weight: 500;
     color: var(--second-foreground);
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    padding-bottom: 1px;
+    border-bottom: 2px solid var(--background);
 }
 
 @media screen and (min-width: 701px) {
     .embeddedLink:hover {
-        text-decoration: underline;
+        /* text-decoration: underline; */
         color: var(--accent);
+        border-bottom: 2px solid var(--accent);
     }
 }
 
