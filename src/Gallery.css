@@ -2,10 +2,29 @@
     font-weight: 400;
     font-size: 3.5vw;
     padding: 25px 50px 25px 50px;
+    color: var(--second-foreground);
+    text-decoration: none;
 }
 
 @media screen and (max-width: 700px) {
     #galleryCategoryTitle {
+        font-size: 15vw;
+    }
+}
+
+#eventTitle {
+    /* text-decoration-line: none; */
+    color: var(--second-foreground);
+    text-decoration-color: var(--accent);
+    /* text-decoration: none; */
+}
+
+#eventTitle:hover {
+    text-decoration-color: #00000000;
+}
+
+@media screen and (max-width: 700px) {
+    #eventTitle {
         font-size: 15vw;
     }
 }
