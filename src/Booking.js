@@ -4,19 +4,20 @@ import LightDark from "./LightDark";
 import IGLink from "./IGLink";
 
 const Booking = () => {
-    return (
-        <>
-            <MediaQuery minWidth={701}>
-                <LightDark />
-            </MediaQuery>
-            <div className="main colour-transition" id="bookingMain">
-                <h1 id="bookingTitle">Booking</h1>
-                <h1 id="bookingDescription">
-                    Contact me about commisions on instagram: <IGLink word="@oliverbryann" />
-                    <br />
-                    Prices below.
-                </h1>
-                <table className="pricingTable">
+  return (
+    <>
+      <MediaQuery minWidth={701}>
+        <LightDark />
+      </MediaQuery>
+      <div className="main colour-transition" id="bookingMain">
+        <h1 id="bookingTitle">Booking</h1>
+        <h1 id="bookingDescription">
+          Contact me about commisions on instagram:{" "}
+          <IGLink word="@oliverbryann" />
+          <br />
+          {/*Prices below.*/}
+        </h1>
+        {/*<table className="pricingTable">
                     <tr>
                         <th>Unedited #</th>
                         <th>Edited #</th>
@@ -37,10 +38,18 @@ const Booking = () => {
                         <td>70</td>
                         <td>35</td>
                     </tr>
-                </table>
-            </div>
-        </>
-    );
+    </table>*/}
+        <img
+          src="/made-by-oliver-bryan.svg"
+          alt="Made by Oliver Bryan"
+          style={{
+            filter: "invert(100%)",
+          }}
+          id="aboutFooter"
+        />
+      </div>
+    </>
+  );
 };
 
 export default Booking;
