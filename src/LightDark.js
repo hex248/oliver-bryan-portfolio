@@ -6,11 +6,11 @@ const LightDark = () => {
 
     useEffect(() => {
         if (localStorage.getItem("colourMode") === "dark") {
-            SetDarkMode();
+            // SetDarkMode();
         } else if (localStorage.getItem("colourMode") === "light") {
-            SetLightMode();
+            // SetLightMode();
         } else {
-            SetDarkMode();
+            // SetDarkMode();
         }
     }, []);
 

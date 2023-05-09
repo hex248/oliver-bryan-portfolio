@@ -6,6 +6,7 @@ import "./Home.css";
 import "./Gallery.css";
 import "./Events.css";
 import "./Contact.css";
+import "./Booking.css";
 import "./About.css";
 import "./font.css";
 
@@ -13,6 +14,7 @@ import Home from "./Home";
 import Header from "./Header";
 import Gallery from "./Gallery";
 import Contact from "./Contact";
+import Booking from "./Booking";
 import About from "./About";
 
 export default function App() {
@@ -27,6 +29,7 @@ export default function App() {
                     <Route path="portraits" element={<Gallery category={"portraits"} />} />
                     <Route path="street" element={<Gallery category={"street"} />} />
                     <Route path="contact" element={<Contact />} />
+                    <Route path="booking" element={<Booking />} />
                     <Route path="about" element={<About />} />
                     <Route path="*" element={<App />} />
                 </Routes>

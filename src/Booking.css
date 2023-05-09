@@ -1,0 +1,60 @@
+#bookingMain {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    height: 85vh;
+}
+
+#bookingTitle {
+    font-weight: 400;
+    font-size: 3.5vw;
+    padding: 25px 50px 0px 50px;
+}
+
+#bookingDescription {
+    font-weight: 400;
+    font-size: calc(15px + 0.5vw);
+}
+
+@media screen and (max-width: 700px) {
+    #bookingTitle {
+        font-size: calc(15px + 10vw);
+    }
+
+    #bookingDescription {
+        font-size: calc(15px + 3.5vw);
+    }
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+.pricingTable {
+    /* width: 25vw; */
+    font-weight: 100;
+    font-size: calc(5px + 0.75vw);
+    /* border: 1px solid var(--foreground); */
+}
+
+.pricingTable td {
+    font-weight: 200;
+    background-color: var(--second-background);
+    font-size: calc(7.5px + 0.75vw);
+    padding: 5px 20px 5px 20px;
+}
+
+.pricingTable th {
+    padding: 5px 20px 5px 20px;
+    font-weight: 600;
+    background-color: var(--third-background);
+    font-size: calc(5px + 0.75vw);
+    height: 3vh;
+}

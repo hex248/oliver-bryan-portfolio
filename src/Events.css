@@ -8,10 +8,10 @@
 
 .event {
     background-color: var(--background);
-    border: 2px solid var(--accent);
+    border: 2px solid var(--foreground);
     border-radius: 10px;
     width: 22.5vw;
-    height: 34vw;
+    height: 33vw;
     display: flex;
     overflow: hidden;
     /* padding: 10px; */
@@ -19,6 +19,19 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 1;
+
+    box-shadow: var(--background-colour) 0px 0px 25px 0px;
+
+    -moz-transition: border 0.35s ease-out;
+    -o-transition: border 0.35s ease-out;
+    -webkit-transition: border 0.35s ease-out;
+    transition: border 0.35s ease-out;
+
+    -moz-transition: box-shadow 0.3s ease-out;
+    -o-transition: box-shadow 0.3s ease-out;
+    -webkit-transition: box-shadow 0.3s ease-out;
+    transition: box-shadow 0.3s ease-out;
 }
 
 .event .imageContainer {
@@ -28,6 +41,18 @@
     justify-content: center;
     align-items: flex-start;
     flex-basis: 100%;
+}
+
+.event .imageCover {
+    position: absolute;
+    background-color: #000000bb;
+    width: inherit;
+    height: inherit;
+
+    -moz-transition: background-color 0.35s ease-out;
+    -o-transition: background-color 0.35s ease-out;
+    -webkit-transition: background-color 0.35s ease-out;
+    transition: background-color 0.35s ease-out;
 }
 
 .event img {
@@ -40,25 +65,29 @@
     color: white;
     position: absolute;
     display: flex;
-    align-items: center;
-    align-content: center;
-    gap: 10px;
     flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: flex-end;
+    bottom: 42.5%;
+    gap: 10px;
     text-align: center;
-    background-color: #000000bb;
+    /* background-color: #000000bb; */
     width: inherit;
-    height: inherit;
+    /* height: inherit; */
+    height: 10vw;
 
-    -moz-transition: background-color 0.2s ease-out;
-    -o-transition: background-color 0.2s ease-out;
-    -webkit-transition: background-color 0.2s ease-out;
-    transition: background-color 0.2s ease-out;
+    -moz-transition: bottom 0.35s ease-out;
+    -o-transition: bottom 0.35s ease-out;
+    -webkit-transition: bottom 0.35s ease-out;
+    transition: bottom 0.35s ease-out;
 }
 
 .eventName {
     font-size: calc(15px + 1vw);
     font-weight: 500;
-    flex-basis: 100%;
+    /* flex-basis: 100%; */
     padding-left: 10px;
     padding-right: 10px;
     text-shadow: #000000 1px 1px 10px;
@@ -83,8 +112,18 @@
 @media screen and (min-width: 701px) {
     /* desktop */
 
-    .event .info:hover {
+    .event:hover {
+        border: 2px solid var(--accent);
+        box-shadow: var(--accent) 0px 0px 25px 0px;
+        z-index: 0;
+    }
+
+    .event:hover .imageCover {
         background-color: #00000000;
+    }
+
+    .event:hover .info {
+        bottom: 4%;
     }
 }
 
