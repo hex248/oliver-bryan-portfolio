@@ -13,8 +13,8 @@
     --mid: #808080;
     /* --accent: #ae7de6; */
     /* --accent-background: #e8d1ff; */
-    --accent: #bb264b;
-    --accent-background: #ffd1dc;
+    --accent: #5CDB4E;
+    --accent-background: #d8f7d5;
     --primary-font: "Montserrat", sans-serif;
 }
 
@@ -119,13 +119,7 @@ body {
 }
 
 #pageTitle {
-    text-decoration: none;
-    font-size: 5vw;
-    color: var(--accent);
-    font-weight: 800;
-    margin: 0;
-    text-align: left;
-    flex-basis: 100%;
+    width: 800px;
 }
 
 @media screen and (max-width: 700px) {
@@ -142,11 +136,14 @@ body {
         font-size: 11vw;
         flex-basis: 100%;
         text-align: center;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .links {
         display: flex;
-        gap: 10vw;
+        gap: 5vw;
     }
 
     .header .link {
