@@ -88,14 +88,14 @@ const updateJSON = () => {
     if (eventIDX > -1) {
       // if the event has already been recorded
       events[eventIDX].photos = fs.readdirSync(
-        `./public/photos/events/${event}/full-size`
+        `./public/photos/events/${event}/web-size`
       );
     } else {
       events.push({
         name: event,
         date: "",
         link: "",
-        photos: fs.readdirSync(`./public/photos/events/${event}/full-size`),
+        photos: fs.readdirSync(`./public/photos/events/${event}/web-size`),
       });
     }
   }
