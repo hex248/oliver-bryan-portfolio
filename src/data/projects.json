@@ -1,0 +1,100 @@
+[
+    {
+        "name": "My Delayed Gift. The EP.",
+        "date": "2023",
+        "client": "KELVIN",
+        "spotifyArtistURL": "https://open.spotify.com/artist/6D28NSYl6ZqpduVN83xwSB?si=KBpjwizxStSFPIQo7Qfo0A",
+        "spotifyProjectURL": "https://open.spotify.com/track/0anXRGzTqdEJ5qgBf2qKo9?si=d15c859c4b574dde",
+        "photos": [
+            {
+                "name": "EP Cover Shoot",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/1.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
+                "name": "EP Cover Shoot",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/2.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
+                "name": "EP Cover Shoot",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/3.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
+                "name": "EP Cover Shoot",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/4.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
+                "name": "EP Cover Shoot",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/5.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
+                "name": "EP Cover Shoot",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/6.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
+                "name": "EP Cover Shoot",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/7.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            }
+        ],
+        "videos": [
+            {
+                "name": "Cologne Fisheye Promo Video 1",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/1.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/1.jpg",
+                "post": "https://www.instagram.com/p/CuM9RFYI44C/"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 2",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/2.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/2.jpg"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 3",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/3.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/3.jpg"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 4",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/4.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/4.jpg"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 5",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/5.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/5.jpg"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 6",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/6.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/6.jpg"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 7",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/7.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/7.jpg"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 8",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/8.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/8.jpg"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 9",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/9.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/9.jpg"
+            },
+            {
+                "name": "Cologne Fisheye Promo Video 10",
+                "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/10.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/10.jpg"
+            }
+        ],
+        "page": "projects/kelvin-my-delayed-gift"
+    }
+]

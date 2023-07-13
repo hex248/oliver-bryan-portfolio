@@ -1,0 +1,87 @@
+.main {
+    display:flex;
+    justify-content: center;
+    gap:1.5vw;
+    padding-top: 1.5vw;
+}
+
+.projectHeader {
+    display:flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align:center;
+    padding-bottom: 25px;
+    border-bottom: 2px white solid;
+    width:100%;
+}
+
+.projectTitle {
+    font-size: calc(110px + 1vw);
+}
+
+.projectSubTitle {
+    font-size: calc(50px + 1vw);
+}
+
+.headerSpotifyIcon {
+    margin-top: 45px;
+    margin-bottom: 35px;
+    transform: scale(4);
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5vw;
+}
+
+.sectionHeading {
+    text-align: center;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    font-size: calc(10px + 1vw);
+}
+
+
+.sectionHeadingIcon {
+    transform: scale(1.5);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sectionContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5vw
+}
+
+.projectPhoto {
+    width: 22.5vw;
+}
+
+@media screen and (max-width: 700px) {
+    .projectTitle {
+        font-size: calc(55px + 1vw);
+    }
+
+    .projectSubTitle {
+        font-size: calc(30px + 1vw);
+    }
+
+    .headerSpotifyIcon {
+        margin-top: 15px;
+        margin-bottom: 0px;
+        transform: scale(2);
+    }
+
+    .projectPhoto {
+        width: 47.5vw;
+    }
+}

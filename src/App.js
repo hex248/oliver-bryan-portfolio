@@ -16,24 +16,34 @@ import Gallery from "./Gallery";
 import Contact from "./Contact";
 import Booking from "./Booking";
 import About from "./About";
+import Projects from "./Projects";
+import KelvinMyDelayedGift from "./projects/KelvinMyDelayedGift/Page";
 
 export default function App() {
-    return (
-        <>
-            <BrowserRouter>
-                <Header />
-                <Routes>
-                    <Route index element={<Home />} />
-                    <Route path="event/*" element={<Gallery category={"event"} />} />
-                    <Route path="events" element={<Gallery category={"events"} />} />
-                    <Route path="portraits" element={<Gallery category={"portraits"} />} />
-                    <Route path="street" element={<Gallery category={"street"} />} />
-                    <Route path="contact" element={<Contact />} />
-                    <Route path="booking" element={<Booking />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="*" element={<App />} />
-                </Routes>
-            </BrowserRouter>
-        </>
-    );
+  return (
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="event/*" element={<Gallery category={"event"} />} />
+          <Route path="events" element={<Gallery category={"events"} />} />
+          <Route
+            path="portraits"
+            element={<Gallery category={"portraits"} />}
+          />
+          <Route path="street" element={<Gallery category={"street"} />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="booking" element={<Booking />} />
+          <Route path="about" element={<About />} />
+          <Route path="projects" element={<Projects />} />
+          <Route
+            path="projects/kelvin-my-delayed-gift"
+            element={<KelvinMyDelayedGift />}
+          />
+          <Route path="*" element={<App />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
 }
