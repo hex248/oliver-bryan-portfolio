@@ -109,12 +109,12 @@
 }
 
 .photoRow {
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    gap:20px;
-    width:100%;
+    gap: 20px;
+    width: 100%;
 }
 
 .photoRow div {
@@ -150,7 +150,7 @@
     }
 
     .sectionHeading h1 {
-        font-size: 32.5px
+        font-size: 30px
     }
 
     .sectionContent {

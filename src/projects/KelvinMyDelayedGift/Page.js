@@ -11,13 +11,13 @@ const KelvinMyDelayedGift = () => {
   const project = projects.find((p) => p.name === "My Delayed Gift. The EP.");
 
   let videoSize = useMediaQuery({ query: "(max-width: 700px)" })
-    ? "185px"
+    ? "40vw"
     : "325px";
 
   let announcementVideoSize = useMediaQuery({ query: "(max-width: 700px)" })
     ? {
-        width: "375px",
-        height: "666px",
+        width: "90vw",
+        height: "160vw",
       }
     : {
         width: "390px",
@@ -26,8 +26,8 @@ const KelvinMyDelayedGift = () => {
 
   let wayMusicVideoSize = useMediaQuery({ query: "(max-width: 700px)" })
     ? {
-        width: "375px",
-        height: "219px",
+        width: "90vw",
+        height: "50vw",
       }
     : {
         width: "1402px",
