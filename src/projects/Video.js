@@ -1,17 +1,30 @@
 import "./Video.css";
 import ReactPlayer from "react-player";
 
-const Video = ({ className, url, preview, width, height }) => {
+const Video = ({
+  className,
+  url,
+  preview,
+  width,
+  height,
+  muted = true,
+  light = false,
+  controls = false,
+  autoPlay = false,
+}) => {
   return (
     <ReactPlayer
       className={className}
-      muted
       loop
-      playing={true}
+      muted={muted}
+      controls={controls}
+      playing={autoPlay}
       url={url}
       width={width}
       height={height}
-      // light={<img src={preview} alt="Thumbnail" width={width} />}
+      light={
+        light ? <img src={preview} alt="Thumbnail" width={width} /> : false
+      }
     />
   );
 };

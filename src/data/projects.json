@@ -7,6 +7,11 @@
         "spotifyProjectURL": "https://open.spotify.com/track/0anXRGzTqdEJ5qgBf2qKo9?si=d15c859c4b574dde",
         "photos": [
             {
+                "name": "Cover Web",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/cover-web.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/1.jpg",
                 "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
@@ -40,9 +45,51 @@
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/7.jpg",
                 "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
+                "name": "EP Cover Shoot",
+                "url": "/photos/projects/My-Delayed-Gift/ep-cover/8.jpg",
+                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+            },
+            {
+                "name": "The Way Music Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-music-video/1.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Music Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-music-video/2.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Music Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-music-video/3.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Music Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-music-video/4.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Music Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-music-video/5.jpg",
+                "post": "N/A"
             }
         ],
         "videos": [
+            {
+                "name": "Announcement Video",
+                "url": "https://youtu.be/vy-sVRLpLlI",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/announcement/announcement-captioned-thumb.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Music Video",
+                "url": "https://youtu.be/c13bCZjPuSo",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/way-music-video/thumb.jpg",
+                "post": "N/A"
+            },
             {
                 "name": "Cologne Fisheye Promo Video 1",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/1.mp4",

@@ -104,7 +104,8 @@
 
     .project {
         width: 85vw;
-        height: 50vh;
+        /* height: 50vh; */
+        padding: 3vw;
     }
 
     .project .info {
@@ -112,7 +113,7 @@
     }
 
     .projectName {
-        font-size: calc(10px + 5vw);
+        font-size: calc(5px + 5vw);
         font-weight: 500;
     }
 
@@ -123,5 +124,13 @@
 
     #projectTitle {
         font-size: 8.5vw;
+    }
+
+    .projectClient {
+        font-size: calc(15px + 1vw);
+        font-weight: 400;
+        flex-basis: 100%;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }

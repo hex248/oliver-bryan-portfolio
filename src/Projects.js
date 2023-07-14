@@ -13,7 +13,10 @@ const Projects = ({}) => {
     return (
       <>
         <a className="project" href={`${project.page}`}>
-          <img src={`${project.photos}/cover-web.jpg`} alt=""></img>
+          <img
+            src={project.photos.find((p) => p.name === "Cover Web").url}
+            alt=""
+          ></img>
           <div className="info">
             <h1 className="projectName">{project.name}</h1>
             <h1 className="projectClient">

@@ -17,11 +17,13 @@
 }
 
 .projectTitle {
-    font-size: calc(110px + 1vw);
+    font-size: 140px;
+    font-weight: 600;
 }
 
 .projectSubTitle {
-    font-size: calc(50px + 1vw);
+    font-size: 60px;
+    font-weight: 500;
 }
 
 .headerSpotifyIcon {
@@ -30,12 +32,22 @@
     transform: scale(4);
 }
 
+.sections {
+    display:flex;
+    flex-wrap:wrap;
+    gap: 75px;
+    justify-content: center;
+    width:1920px;
+}
+
 .section {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1.5vw;
+    width: 100%;
 }
 
 .sectionHeading {
@@ -45,7 +57,11 @@
     align-items: center;
     justify-content: center;
     gap: 0px;
-    font-size: calc(10px + 1vw);
+}
+
+.sectionHeading h1 {
+    font-size: 50px;
+    font-weight: 600;
 }
 
 
@@ -59,20 +75,72 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1.5vw
+    gap: 30px;
+    width: 75%;
+}
+
+.fisheyeGrid {
+    gap: 0px;
+    width: 100%;
+}
+
+.photoGrid {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.musicVideoWithPhotos {
+    width: 75%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .projectPhoto {
-    width: 22.5vw;
+    width: 430px;
+}
+
+.photoRow {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap:20px;
+    width:100%;
+}
+
+.photoRow div {
+    flex-basis: 25%;
+}
+
+.photoRow img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
 }
 
 @media screen and (max-width: 700px) {
     .projectTitle {
-        font-size: calc(55px + 1vw);
+        font-size: 45px;
     }
 
     .projectSubTitle {
-        font-size: calc(30px + 1vw);
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 30px;
+    }
+
+    .sections {
+        gap: 50px;
     }
 
     .headerSpotifyIcon {
@@ -81,7 +149,37 @@
         transform: scale(2);
     }
 
+    .sectionHeading h1 {
+        font-size: 32.5px
+    }
+
+    .sectionContent {
+        width: 100%;
+        gap: 15px;
+    }
+    
+    .musicVideoWithPhotos {
+        width:100%;
+    }
+
+    .sectionContent img {
+        width: 175px;
+    }
+
+    .photoGrid {
+        width:100%;
+    }
+
     .projectPhoto {
-        width: 47.5vw;
+        width: 185px;
+    }
+
+    .photoRow {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .photoRow div {
+        flex-basis: 50%;
     }
 }
