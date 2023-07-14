@@ -190,7 +190,6 @@ const KelvinMyDelayedGift = () => {
             <div className="musicVideoWithPhotos">
               <Video
                 muted={false}
-                autoPlay
                 controls
                 className={"musicVideo"}
                 url={
