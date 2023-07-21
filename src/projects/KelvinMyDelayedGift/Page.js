@@ -34,6 +34,17 @@ const KelvinMyDelayedGift = () => {
         height: "789px",
       };
 
+  let wayPromoVideoSize = useMediaQuery({ query: "(max-width: 700px)" })
+    ? {
+        width: "90vw",
+        height: "160vw",
+      }
+    : {
+        width: "335.44px",
+        height: "auto",
+        // height: "596.3377778px",
+      };
+
   return (
     <>
       <div className="main">
@@ -326,6 +337,108 @@ const KelvinMyDelayedGift = () => {
                     />
                   );
                 })}
+            </div>
+          </div>
+
+          {/* The Way Promo Videos */}
+          <div className="section">
+            <div className="sectionHeading">
+              {project.videos.filter((v) =>
+                v.name.includes("The Way Promo Video ")
+              )[0].post === "N/A" ? null : (
+                <SocialIcon
+                  fgColor={"#ffffff"}
+                  bgColor={"#ffffff00"}
+                  className="sectionHeadingIcon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  url={
+                    project.photos.filter((v) =>
+                      v.name.includes("The Way Promo Video ")
+                    )[0].post
+                  }
+                />
+              )}
+
+              <h1>The Way Promo Videos</h1>
+            </div>
+
+            <div className="musicVideoWithPhotos">
+              <div className="videoRow">
+                {project.videos
+                  .filter((v) => v.name.includes("The Way Promo Video"))
+                  .map((v) => {
+                    return (
+                      <Video
+                        light
+                        loop={false}
+                        autoPlay
+                        muted={false}
+                        controls
+                        className={"verticalVideo"}
+                        url={v.url}
+                        preview={v.thumbnail}
+                        width={wayPromoVideoSize.width}
+                        height={wayPromoVideoSize.height}
+                      />
+                    );
+                  })}
+              </div>
+
+              <MediaQuery maxWidth={700}>
+                <div className="photoRow">
+                  {project.photos
+                    .filter((p) => p.name.includes("The Way Promo Video"))
+                    .slice(0, 2)
+                    .map((p) => {
+                      return (
+                        <div>
+                          <img
+                            src={p.url}
+                            alt={p.url
+                              .split("/")
+                              [p.url.split("/").length - 1].replace(".jpg", "")}
+                          />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div className="photoRow">
+                  {project.photos
+                    .filter((p) => p.name.includes("The Way Promo Video"))
+                    .slice(2, 4)
+                    .map((p) => {
+                      return (
+                        <div>
+                          <img
+                            src={p.url}
+                            alt={p.url
+                              .split("/")
+                              [p.url.split("/").length - 1].replace(".jpg", "")}
+                          />
+                        </div>
+                      );
+                    })}
+                </div>
+              </MediaQuery>
+              <MediaQuery minWidth={701}>
+                <div className="photoRow">
+                  {project.photos
+                    .filter((p) => p.name.includes("The Way Promo Video"))
+                    .map((p) => {
+                      return (
+                        <div>
+                          <img
+                            src={p.url}
+                            alt={p.url
+                              .split("/")
+                              [p.url.split("/").length - 1].replace(".jpg", "")}
+                          />
+                        </div>
+                      );
+                    })}
+                </div>
+              </MediaQuery>
             </div>
           </div>
         </div>

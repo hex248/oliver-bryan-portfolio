@@ -108,6 +108,25 @@
     width: 430px;
 }
 
+.videoRow {display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    width: 100%;
+}
+
+.videoRow div {
+    flex-basis: 25%;
+}
+
+.videoRow video {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
 .photoRow {
     display: flex;
     flex-direction: row;

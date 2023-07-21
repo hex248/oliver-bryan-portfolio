@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 
 const Video = ({
   className,
+  loop = true,
   url,
   preview,
   width,
@@ -15,7 +16,7 @@ const Video = ({
   return (
     <ReactPlayer
       className={className}
-      loop
+      loop={loop}
       muted={muted}
       controls={controls}
       playing={autoPlay}

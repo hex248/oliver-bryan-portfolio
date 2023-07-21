@@ -75,6 +75,26 @@
                 "name": "The Way Music Video",
                 "url": "/photos/projects/My-Delayed-Gift/way-music-video/5.jpg",
                 "post": "N/A"
+            },
+            {
+                "name": "The Way Promo Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-promo/1.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Promo Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-promo/2.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Promo Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-promo/3.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Promo Video",
+                "url": "/photos/projects/My-Delayed-Gift/way-promo/4.jpg",
+                "post": "N/A"
             }
         ],
         "videos": [
@@ -140,6 +160,27 @@
                 "name": "Cologne Fisheye Promo Video 10",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/10.mp4",
                 "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/10.jpg"
+            },
+            {
+                "name": "The Way Promo Video 1",
+                "url": "/videos/projects/My-Delayed-Gift/way-promo/1.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/1.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "The Way Promo Video 2",
+                "url": "/videos/projects/My-Delayed-Gift/way-promo/2.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/2.jpg"
+            },
+            {
+                "name": "The Way Promo Video 3",
+                "url": "/videos/projects/My-Delayed-Gift/way-promo/3.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/3.jpg"
+            },
+            {
+                "name": "The Way Promo Video 4",
+                "url": "/videos/projects/My-Delayed-Gift/way-promo/4.mp4",
+                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/4.jpg"
             }
         ],
         "page": "projects/kelvin-my-delayed-gift"
