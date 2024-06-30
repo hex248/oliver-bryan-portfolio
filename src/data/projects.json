@@ -198,6 +198,54 @@
         "page": "projects/cassama-my-delayed-gift"
     },
     {
+        "name": "WANTED",
+        "date": "2023",
+        "client": "CASSAMA",
+        "spotifyArtistURL": "https://open.spotify.com/artist/0d3qq2XhtdGReCblc5bMSn?si=sQ1_BqeNRdyBcdJ0yUBQdw",
+        "spotifyProjectURL": "",
+        "photos": [
+            {
+                "name": "Cover Web",
+                "url": "/photos/projects/cassama-wanted/thumbnail.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "WANTED Video",
+                "url": "/photos/projects/cassama-wanted/1.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "WANTED Video",
+                "url": "/photos/projects/cassama-wanted/2.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "WANTED Video",
+                "url": "/photos/projects/cassama-wanted/3.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "WANTED Video",
+                "url": "/photos/projects/cassama-wanted/4.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "WANTED Video",
+                "url": "/photos/projects/cassama-wanted/5.jpg",
+                "post": "N/A"
+            }
+        ],
+        "videos": [
+            {
+                "name": "WANTED Video",
+                "url": "https://youtu.be/87GJ9UAtQW8",
+                "thumbnail": "/photos/projects/cassama-wanted/thumbnail.jpg",
+                "post": "N/A"
+            }
+        ],
+        "page": "projects/cassama-wanted"
+    },
+    {
         "name": "Blue",
         "date": "2024",
         "client": "CASSAMA",

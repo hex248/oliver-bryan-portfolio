@@ -18,6 +18,7 @@ import Booking from "./Booking";
 import About from "./About";
 import Projects from "./Projects";
 import CASSAMAMyDelayedGift from "./projects/CASSAMAMyDelayedGift/Page";
+import CASSAMAWANTED from "./projects/CASSAMAWANTED/Page";
 import CASSAMABlue from "./projects/CASSAMABlue/Page";
 
 export default function App() {
@@ -50,6 +51,10 @@ export default function App() {
                     <Route
                         path="projects/cassama-my-delayed-gift"
                         element={<CASSAMAMyDelayedGift />}
+                    />
+                    <Route
+                        path="projects/cassama-wanted"
+                        element={<CASSAMAWANTED />}
                     />
                     <Route
                         path="projects/cassama-blue"
