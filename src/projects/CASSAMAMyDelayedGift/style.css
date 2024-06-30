@@ -1,0 +1,203 @@
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 1.5vw;
+    padding-top: 1.5vw;
+}
+
+.projectHeader {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: center;
+    padding-bottom: 25px;
+    width: 100%;
+}
+
+.projectTitle {
+    font-size: 140px;
+    font-weight: 600;
+}
+
+.projectSubTitle {
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.headerSpotifyIcon {
+    margin-top: 45px;
+    margin-bottom: 35px;
+    transform: scale(4);
+}
+
+.sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 75px;
+    justify-content: center;
+    width: 1920px;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+    width: 100%;
+}
+
+.sectionHeading {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+
+.sectionHeading h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.sectionHeadingIcon {
+    transform: scale(1.5);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.sectionContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    width: 75%;
+}
+
+.fisheyeGrid {
+    gap: 0px;
+    width: 100%;
+}
+
+.photoGrid {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.musicVideoWithPhotos {
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.projectPhoto {
+    width: 430px;
+}
+
+.videoRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    width: 100%;
+}
+
+.videoRow div {
+    flex-basis: 25%;
+}
+
+.videoRow video {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+.photoRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    width: 100%;
+}
+
+.photoRow div {
+    flex-basis: 25%;
+}
+
+.photoRow img {
+    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 700px) {
+    .projectTitle {
+        font-size: 45px;
+    }
+
+    .projectSubTitle {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        font-size: 30px;
+    }
+
+    .sections {
+        gap: 50px;
+    }
+
+    .headerSpotifyIcon {
+        margin-top: 15px;
+        margin-bottom: 0px;
+        transform: scale(2);
+    }
+
+    .sectionHeading h1 {
+        font-size: 30px;
+    }
+
+    .sectionContent {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .musicVideoWithPhotos {
+        width: 100%;
+    }
+
+    .sectionContent img {
+        width: 175px;
+    }
+
+    .photoGrid {
+        width: 100%;
+    }
+
+    .projectPhoto {
+        width: 185px;
+    }
+
+    .photoRow {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .photoRow div {
+        flex-basis: 50%;
+    }
+}

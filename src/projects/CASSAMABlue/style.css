@@ -1,19 +1,18 @@
 .main {
-    display:flex;
+    display: flex;
     justify-content: center;
-    gap:1.5vw;
+    gap: 1.5vw;
     padding-top: 1.5vw;
 }
 
 .projectHeader {
-    display:flex;
+    display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    text-align:center;
+    text-align: center;
     padding-bottom: 25px;
-    border-bottom: 2px white solid;
-    width:100%;
+    width: 100%;
 }
 
 .projectTitle {
@@ -33,11 +32,11 @@
 }
 
 .sections {
-    display:flex;
-    flex-wrap:wrap;
+    display: flex;
+    flex-wrap: wrap;
     gap: 75px;
     justify-content: center;
-    width:1920px;
+    width: 1920px;
 }
 
 .section {
@@ -52,7 +51,7 @@
 
 .sectionHeading {
     text-align: center;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -63,7 +62,6 @@
     font-size: 50px;
     font-weight: 600;
 }
-
 
 .sectionHeadingIcon {
     transform: scale(1.5);
@@ -96,7 +94,7 @@
 
 .musicVideoWithPhotos {
     width: 75%;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
@@ -108,7 +106,8 @@
     width: 430px;
 }
 
-.videoRow {display: flex;
+.videoRow {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
@@ -117,7 +116,7 @@
 }
 
 .videoRow div {
-    flex-basis: 25%;
+    flex-basis: 100%;
 }
 
 .videoRow video {
@@ -130,14 +129,14 @@
 .photoRow {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-end;
     gap: 20px;
     width: 100%;
 }
 
 .photoRow div {
-    flex-basis: 25%;
+    flex-basis: 100%;
 }
 
 .photoRow img {
@@ -169,16 +168,16 @@
     }
 
     .sectionHeading h1 {
-        font-size: 30px
+        font-size: 30px;
     }
 
     .sectionContent {
         width: 100%;
         gap: 15px;
     }
-    
+
     .musicVideoWithPhotos {
-        width:100%;
+        width: 100%;
     }
 
     .sectionContent img {
@@ -186,7 +185,7 @@
     }
 
     .photoGrid {
-        width:100%;
+        width: 100%;
     }
 
     .projectPhoto {
@@ -199,6 +198,6 @@
     }
 
     .photoRow div {
-        flex-basis: 50%;
+        flex-basis: 100%;
     }
 }

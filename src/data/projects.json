@@ -2,54 +2,54 @@
     {
         "name": "My Delayed Gift. The EP.",
         "date": "2023",
-        "client": "KELVIN",
-        "spotifyArtistURL": "https://open.spotify.com/artist/6D28NSYl6ZqpduVN83xwSB?si=KBpjwizxStSFPIQo7Qfo0A",
-        "spotifyProjectURL": "https://open.spotify.com/track/0anXRGzTqdEJ5qgBf2qKo9?si=d15c859c4b574dde",
+        "client": "CASSAMA",
+        "spotifyArtistURL": "https://open.spotify.com/artist/0d3qq2XhtdGReCblc5bMSn?si=sQ1_BqeNRdyBcdJ0yUBQdw",
+        "spotifyProjectURL": "https://open.spotify.com/album/6M92EAbivejmH9AVPJOsf1?si=Z5NOdANlRVStitzQQKeirw",
         "photos": [
             {
                 "name": "Cover Web",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/cover-web.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/1.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/2.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/3.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/4.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/5.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/6.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/7.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "EP Cover Shoot",
                 "url": "/photos/projects/My-Delayed-Gift/ep-cover/8.jpg",
-                "post": "https://www.instagram.com/p/Ct4XYupIz8u/"
+                "post": "N/A"
             },
             {
                 "name": "The Way Music Video",
@@ -114,52 +114,61 @@
                 "name": "Cologne Fisheye Promo Video 1",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/1.mp4",
                 "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/1.jpg",
-                "post": "https://www.instagram.com/p/CuM9RFYI44C/"
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 2",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/2.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/2.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/2.jpg",
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 3",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/3.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/3.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/3.jpg",
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 4",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/4.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/4.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/4.jpg",
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 5",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/5.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/5.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/5.jpg",
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 6",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/6.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/6.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/6.jpg",
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 7",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/7.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/7.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/7.jpg",
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 8",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/8.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/8.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/8.jpg",
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 9",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/9.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/9.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/9.jpg",
+                "post": "N/A"
             },
             {
                 "name": "Cologne Fisheye Promo Video 10",
                 "url": "/videos/projects/My-Delayed-Gift/cologne-promo/fisheye/square/10.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/10.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/cologne-promo/fisheye/10.jpg",
+                "post": "N/A"
             },
             {
                 "name": "The Way Promo Video 1",
@@ -170,19 +179,80 @@
             {
                 "name": "The Way Promo Video 2",
                 "url": "/videos/projects/My-Delayed-Gift/way-promo/2.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/2.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/2.jpg",
+                "post": "N/A"
             },
             {
                 "name": "The Way Promo Video 3",
                 "url": "/videos/projects/My-Delayed-Gift/way-promo/3.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/3.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/3.jpg",
+                "post": "N/A"
             },
             {
                 "name": "The Way Promo Video 4",
                 "url": "/videos/projects/My-Delayed-Gift/way-promo/4.mp4",
-                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/4.jpg"
+                "thumbnail": "/photos/projects/My-Delayed-Gift/way-promo/thumbnails/4.jpg",
+                "post": "N/A"
             }
         ],
-        "page": "projects/kelvin-my-delayed-gift"
+        "page": "projects/cassama-my-delayed-gift"
+    },
+    {
+        "name": "Blue",
+        "date": "2024",
+        "client": "CASSAMA",
+        "spotifyArtistURL": "https://open.spotify.com/artist/0d3qq2XhtdGReCblc5bMSn?si=sQ1_BqeNRdyBcdJ0yUBQdw",
+        "spotifyProjectURL": "https://open.spotify.com/track/2es2DbR7OYEJB3ObbqwxDW?si=aa8f92e232fd4481",
+        "photos": [
+            {
+                "name": "Cover Web",
+                "url": "/photos/projects/cassama-blue/thumbnail.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "Blue Music Video",
+                "url": "/photos/projects/cassama-blue/1.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "Blue Music Video",
+                "url": "/photos/projects/cassama-blue/2.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "Blue Music Video",
+                "url": "/photos/projects/cassama-blue/3.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "Blue Music Video",
+                "url": "/photos/projects/cassama-blue/4.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "Blue Music Video",
+                "url": "/photos/projects/cassama-blue/5.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "Blue Music Video",
+                "url": "/photos/projects/cassama-blue/6.jpg",
+                "post": "N/A"
+            },
+            {
+                "name": "Blue Music Video",
+                "url": "/photos/projects/cassama-blue/7.jpg",
+                "post": "N/A"
+            }
+        ],
+        "videos": [
+            {
+                "name": "Blue Music Video",
+                "url": "https://youtu.be/RROig-X7vbE",
+                "thumbnail": "/photos/projects/cassama-blue/thumbnail.jpg",
+                "post": "N/A"
+            }
+        ],
+        "page": "projects/cassama-blue"
     }
 ]

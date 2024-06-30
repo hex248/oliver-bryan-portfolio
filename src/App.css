@@ -13,7 +13,7 @@
     --mid: #808080;
     /* --accent: #ae7de6; */
     /* --accent-background: #e8d1ff; */
-    --accent: #5CDB4E;
+    --accent: #5cdb4e;
     --accent-background: #d8f7d5;
     --primary-font: "Montserrat", sans-serif;
 }
@@ -91,6 +91,7 @@ body {
     max-height: 15vh;
     column-gap: 30px;
     margin: 0;
+    border-bottom: 1px solid var(--second-foreground);
 }
 
 .header h1 {
@@ -130,6 +131,7 @@ body {
         padding-bottom: 10px;
         height: 15vh;
         max-height: 15vh;
+        border-bottom: 1px solid var(--second-foreground);
     }
 
     #pageTitle {
@@ -143,11 +145,13 @@ body {
 
     .links {
         display: flex;
-        gap: 5vw;
+        gap: 10vw;
+        width: 100%;
+        justify-content: center;
     }
 
     .header .link {
-        font-size: 4vw;
+        font-size: 5.5vw;
     }
 }
 
