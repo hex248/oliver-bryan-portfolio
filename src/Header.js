@@ -20,28 +20,46 @@ const Header = () => {
                         }}
                     />
                 </Link>
-                <div className="links">
-                    <Link to="/portraits" className="link">
-                        Portraits
-                    </Link>
-                    <Link to="/events" className="link">
-                        Events
-                    </Link>
-                    <Link to="/street" className="link">
-                        Street
-                    </Link>
-                </div>
-                <div className="links">
-                    <Link to="/projects" className="link">
-                        Projects
-                    </Link>
-                    {/* <Link to="/booking" className="link">
-                        Booking
-                    </Link> */}
-                    <Link to="/about" className="link">
-                        About
-                    </Link>
-                </div>
+                <MediaQuery maxWidth={700}>
+                    <div className="links">
+                        <Link to="/portraits" className="link">
+                            Portraits
+                        </Link>
+                        <Link to="/events" className="link">
+                            Events
+                        </Link>
+                        <Link to="/street" className="link">
+                            Street
+                        </Link>
+                    </div>
+                    <div className="links">
+                        <Link to="/projects" className="link">
+                            Projects
+                        </Link>
+                        <Link to="/about" className="link">
+                            About
+                        </Link>
+                    </div>
+                </MediaQuery>
+                <MediaQuery minWidth={701}>
+                    <div className="links">
+                        <Link to="/portraits" className="link">
+                            Portraits
+                        </Link>
+                        <Link to="/events" className="link">
+                            Events
+                        </Link>
+                        <Link to="/street" className="link">
+                            Street
+                        </Link>
+                        <Link to="/projects" className="link">
+                            Projects
+                        </Link>
+                        <Link to="/about" className="link">
+                            About
+                        </Link>
+                    </div>
+                </MediaQuery>
             </div>
         </>
     );
