@@ -11,7 +11,7 @@ const About = () => {
             <div className="main colour-transition" id="aboutMain">
                 <h1 id="aboutTitle">About</h1>
                 <h1 id="aboutDescription">
-                    19 years old
+                    20 years old
                     <br />
                     Based in London
                     <br />
